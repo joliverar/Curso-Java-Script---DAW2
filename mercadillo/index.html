@@ -1,0 +1,110 @@
+<!doctype html> <!-- Tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma del documento: español -->
+  <head>
+    <meta charset="utf-8" /> <!-- Codificación UTF-8 para soportar acentos/ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Escala para móviles/responsive -->
+    <title>UD2E2 · Mercadillo — Inventario</title> <!-- Título que verá el usuario en la pestaña -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Cargamos la hoja de estilos externa -->
+  </head>
+  <body> <!-- Comienzo del contenido visible -->
+    <!-- Encabezado de la aplicación: título y descripción -->
+    <header class="header"> <!-- Bloque superior con título -->
+      <h1>UD2E2 — Mercadillo · Gestión de Inventario (HTML + JS)</h1> <!-- Título principal -->
+      <p>
+        <!-- Breve descripción de la arquitectura por capas -->
+        Arquitectura por capas:
+        <strong>Presentación</strong> (UI),
+        <strong>Negocio</strong> (IIFE <code>$negocio</code>),
+        <strong>Datos</strong> (objeto en memoria).
+      </p>
+    </header>
+
+    <!-- Contenedor principal con layout a dos columnas: acciones (izq) + resultados (dcha) -->
+    <main class="app"> <!-- Grid principal -->
+      <!-- Panel izquierdo: formularios y botones -->
+      <section class="card stack" aria-labelledby="acciones-title"> <!-- Tarjeta con acciones -->
+        <h2 id="acciones-title">Acciones</h2> <!-- Título del panel -->
+
+        <!-- === Agregar producto === -->
+        <div class="form-grid" aria-labelledby="agregar-title"> <!-- Grupo de campos (grid) -->
+          <h3 id="agregar-title">Agregar producto</h3> <!-- Subtítulo del bloque -->
+          <label for="idAgregarNombre">Nombre</label> <!-- Etiqueta para accesibilidad -->
+          <input id="idAgregarNombre" type="text" placeholder="p.ej. Manzanas Golden" /> <!-- Entrada de nombre -->
+          <div class="row"> <!-- Fila con dos columnas: cantidad y precio -->
+            <div> <!-- Columna izquierda: cantidad -->
+              <label for="idAgregarCantidad">Cantidad</label> <!-- Etiqueta cantidad -->
+              <input id="idAgregarCantidad" type="number" inputmode="numeric" min="0" placeholder="p.ej. 10" /> <!-- Entrada numérica -->
+            </div>
+            <div> <!-- Columna derecha: precio -->
+              <label for="idAgregarPrecio">Precio (€)</label> <!-- Etiqueta precio -->
+              <input id="idAgregarPrecio" type="number" step="0.01" inputmode="decimal" min="0" placeholder="p.ej. 1.50" /> <!-- Precio con decimales -->
+            </div>
+          </div>
+          <label for="idAgregarCategoria">Categoría</label> <!-- Etiqueta categoría -->
+          <input id="idAgregarCategoria" type="text" placeholder="p.ej. Fruta" /> <!-- Entrada de categoría -->
+          <div class="row"> <!-- Fila de botones de acción -->
+            <button id="id_boton" title="Acción principal: Agregar">Agregar</button> <!-- Botón principal con ID pedido -->
+            <button id="btnDemo" class="btn-secondary" title="Carga 4 productos de ejemplo">Cargar demo</button> <!-- Botón de datos de ejemplo -->
+          </div>
+        </div>
+
+        <!-- === Buscar producto === -->
+        <div class="form-grid" aria-labelledby="buscar-title"> <!-- Grupo de búsqueda -->
+          <h3 id="buscar-title">Buscar producto</h3> <!-- Subtítulo -->
+          <label for="idBuscar">Nombre</label> <!-- Etiqueta del input de búsqueda -->
+          <input id="idBuscar" type="text" placeholder="p.ej. Manzanas Golden" /> <!-- Campo de búsqueda (ID pedido) -->
+          <button id="btnBuscar">Buscar</button> <!-- Botón para ejecutar la búsqueda -->
+        </div>
+
+        <!-- === Eliminar producto === -->
+        <div class="form-grid" aria-labelledby="eliminar-title"> <!-- Grupo de eliminar -->
+          <h3 id="eliminar-title">Eliminar producto</h3> <!-- Subtítulo -->
+          <label for="idEliminarNombre">Nombre</label> <!-- Etiqueta del campo nombre a eliminar -->
+          <input id="idEliminarNombre" type="text" placeholder="p.ej. Manzanas Golden" /> <!-- Entrada de nombre a borrar -->
+          <button id="btnEliminar" class="btn-danger">Eliminar</button> <!-- Botón eliminar con estilo de peligro -->
+          <span class="hint">Se pedirá confirmación antes de eliminar.</span> <!-- Nota de seguridad -->
+        </div>
+
+        <!-- === Actualizar inventario (sumar/restar) === -->
+        <div class="form-grid" aria-labelledby="actualizar-title"> <!-- Grupo de actualización -->
+          <h3 id="actualizar-title">Actualizar inventario (± cantidad)</h3> <!-- Subtítulo -->
+          <label for="idActualizarNombre">Nombre</label> <!-- Etiqueta nombre -->
+          <input id="idActualizarNombre" type="text" placeholder="p.ej. Manzanas Golden" /> <!-- Entrada nombre -->
+          <label for="idActualizarCantidad">Cantidad (usa negativos para restar)</label> <!-- Etiqueta delta -->
+          <input id="idActualizarCantidad" type="number" inputmode="numeric" placeholder="p.ej. -2 o 5" /> <!-- Entrada delta cantidad -->
+          <button id="btnActualizar">Aplicar</button> <!-- Botón aplicar cambios -->
+        </div>
+
+        <!-- === Listados: filtrar / ordenar / imprimir === -->
+        <div class="form-grid" aria-labelledby="otras-title"> <!-- Grupo de listados -->
+          <h3 id="otras-title">Listados</h3> <!-- Subtítulo -->
+          <div class="row"> <!-- Fila con filtro por categoría -->
+            <div> <!-- Columna: input de filtro -->
+              <label for="id_filtro">Filtrar por categoría</label> <!-- Etiqueta filtro (ID pedido) -->
+              <input id="id_filtro" type="text" placeholder="p.ej. Fruta" /> <!-- Entrada de filtro -->
+            </div>
+            <div style="align-self:end;"> <!-- Columna: botón Filtrar -->
+              <button id="btnFiltrar">Filtrar</button> <!-- Lanza el filtrado -->
+            </div>
+          </div>
+          <div class="row"> <!-- Fila con ordenar e imprimir -->
+            <button id="btnOrdenarPrecio">Ordenar por precio (asc)</button> <!-- Ordena por precio ascendente -->
+            <button id="btnImprimir" class="btn-secondary">Imprimir inventario</button> <!-- Muestra todo -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel derecho: resultados de las acciones (tablas/mensajes) -->
+      <section class="card" aria-labelledby="resultados-title"> <!-- Tarjeta de resultados -->
+        <h2 id="resultados-title">Resultados</h2> <!-- Título del panel de resultados -->
+        <div id="idResultados" class="stack" style="min-height: 220px;"> <!-- Contenedor de salida (ID pedido) -->
+          <p class="hint">Aquí verás los resultados (búsquedas, listados, etc.).</p> <!-- Mensaje inicial de ayuda -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Carga de scripts: primero la capa de negocio, luego la de UI (que usa $negocio) -->
+    <script src="js/negocio.js"></script> <!-- Módulo de negocio: lógica/reglas/datos -->
+    <script src="js/ui.js"></script> <!-- Módulo de presentación: DOM, eventos y render -->
+  </body>
+</html>

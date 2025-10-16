@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Reto DOM 1 — Leer inputs</title>
+</head>
+<body>
+  <h1>DOM 1 — Leer valores con getElementById + alert</h1>
+  <label>Nombre: <input id="idNombre" type="text" placeholder="Ada"></label><br>
+  <label>Edad: <input id="idEdad" type="number" placeholder="33"></label><br>
+  <label>Ciudad: <input id="idCiudad" type="text" placeholder="Lima"></label><br><br>
+  <button id="btnMostrar">Mostrar</button>
+  <script>
+    "use strict";
+    const $nombre = document.getElementById("idNombre");
+    const $edad   = document.getElementById("idEdad");
+    const $ciudad = document.getElementById("idCiudad");
+    const $btn    = document.getElementById("btnMostrar");
+    $btn.addEventListener("click", () => {
+      alert(`Nombre: ${$nombre.value}\nEdad: ${$edad.value}\nCiudad: ${$ciudad.value}`);
+    });
+  </script>
+</body>
+</html>

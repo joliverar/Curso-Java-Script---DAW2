@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Reto Arrays 1 — map() + total</title>
+  <style>
+    table{border-collapse:collapse} td,th{border:1px solid #aaa;padding:6px}
+    .num{text-align:right;font-variant-numeric:tabular-nums}
+  </style>
+</head>
+<body>
+  <h1>Arrays 1 — map(): agrega campo total = cantidad * precio</h1>
+  <div id="out"></div>
+  <script>
+    "use strict";
+    const productos = [
+      { nombre: "Manzanas", cantidad: 3, precio: 1.5 },
+      { nombre: "Leche 1L", cantidad: 2, precio: 0.95 },
+      { nombre: "Pan",      cantidad: 5, precio: 0.75 }
+    ];
+    const conTotal = productos.map(p => ({
+      ...p,
+      total: Number((p.cantidad * p.precio).toFixed(2))
+    }));
+    const cols = ["nombre","cantidad","precio","total"];
+    const thead = `<thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead>`;
+    const tbody = `<tbody>${
+      conTotal.map(r=>`<tr>${
+        cols.map(c=>`<td class="${c!=="nombre"?"num":""}">${r[c]}</td>`).join("")
+      }</tr>`).join("")
+    }</tbody>`;
+    document.getElementById("out").innerHTML = `<table>${thead}${tbody}</table>`;
+    console.log("Original:", productos);
+    console.log("Con total:", conTotal);
+  </script>
+</body>
+</html>

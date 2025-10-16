@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Arrays 2 — filter(): categoría; sort(): precio asc</h1>
+      <input id ="idCat" type="texto" placeholder="Fruta"></br>
+      <button it ="idFiltrar">Filtrar</button></br>
+      <div id = "out"></div></br>
+
+
+    <script>
+        "use strict";
+        
+        const datos = [
+            {nombre: "NManzana", cantidad: 5, precio: 5.6, categoria ="Fruta"},
+            {nombre: "Durasno", cantidad: 4, precio: 4.6, categoria ="Pan"},
+            {nombre: "Platano", cantidad: 1, precio: 1.6, categoria ="tec"},
+            {nombre: "Platano", cantidad: 1, precio: 1.6, categoria ="Fruta"}
+        ];
+
+        const id = x => document.getElementById(x);
+        const $cat = document.getElementById("idCat");
+        const $out = document.getElementById("out");
+        const $btn = document.getElementById("idFiltrar");
+
+        $btn.addEventListener("click", () => {
+                const cat = ($cat.value || "").trim.tolowercase();
+                const filtrado = datos
+                    .filter (p => p.categoria.tolowercase()===cat)
+                    .sort ((a, b) => a.precio - b.precio);
+                reader(filtrado);
+        });
+
+        function reader(rows){
+            if(!rows.length) {$out.innerHTML = "<p>Sin datos</p>"; return; }
+            const cols = ["nombre","categoria","cantidad","precio"];
+            const thead = `<thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead>`;
+            const tbody = `<tbody>${
+                rows.map(r=>`<tr>${
+                cols.map(c=>`<td class="${c==="nombre"||c==="categoria"?"":"num"}">${c==="precio"?Number(r[c]).toFixed(2):r[c]}</td>`).join("")
+                }</tr>`).join("")
+            }</tbody>`;
+            $out.innerHTML = `<table>${thead}${tbody}</table>`;
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Reto Normalización — trim() + toLowerCase()</title>
+</head>
+<body>
+  <h1>Normalización — trim() + toLowerCase()</h1>
+  <p>Escribe un nombre y verás su clave normalizada. Prueba con espacios y mayúsculas.</p>
+  <input id="idTexto" type="text" placeholder="  MANZANAS  ">
+  <button id="btnTest">Normalizar</button>
+  <pre id="log"></pre>
+  <script>
+    "use strict";
+    const id = x => document.getElementById(x);
+    const $t = id("idTexto");
+    const $log = id("log");
+    function clave(s){ return (s ?? "").trim().toLowerCase(); }
+    id("btnTest").addEventListener("click", () => {
+      const raw = $t.value;
+      const k = clave(raw);
+      const ejemplos = [
+        ["  MANZANAS  ", clave("  MANZANAS  ")],
+        ["Manzanas",     clave("Manzanas")    ],
+        ["manzanas",     clave("manzanas")    ]
+      ];
+      $log.textContent =
+        "Entrada: " + JSON.stringify(raw) + "\n" +
+        "Clave normalizada: " + JSON.stringify(k) + "\n\n" +
+        "Pruebas rápidas:\n" +
+        ejemplos.map(([inp,out]) => ` - ${JSON.stringify(inp)} -> ${JSON.stringify(out)}`).join("\n");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Reto DOM 2 — Agregar <li> con innerHTML +=</title>
+</head>
+<body>
+  <h1>DOM 2 — Agregar elementos a una lista</h1>
+  <input id="idItem" type="text" placeholder="Tarea o ítem">
+  <button id="btnAgregar">Agregar</button>
+  <ol id="idLista"></ol>
+  <script>
+    "use strict";
+    const id = (x) => document.getElementById(x);
+    const $item = id("idItem");
+    const $btn  = id("btnAgregar");
+    const $ol   = id("idLista");
+    $btn.addEventListener("click", () => {
+      const texto = ($item.value || "").trim();
+      if (!texto) { alert("Escribe algo"); return; }
+      $ol.innerHTML += `<li>${texto}</li>`;
+      $item.value = "";
+      $item.focus();
+    });
+  </script>
+</body>
+</html>

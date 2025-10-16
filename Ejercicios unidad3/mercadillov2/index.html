@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inventario de productos</h1>
+    <input id="idAgregarNombre" type="Texto" placeholder="Manzana">
+    <input id="idAgregarCantidad" type="number" placeholder="4">
+    <input id="idAgregarPrecio" type="number" placeholder="4.5">
+    <input id="idAgregarCategoria" type="text" placeholder="Fruta">
+    <button id ="id_boton"> Agregar</button>
+   
+   
+  <div id="resultados"></div>
+
+    <!-- Carga de scripts: primero la capa de negocio, luego la de UI (que usa $negocio) -->
+    <script src="negocio.js"></script> <!-- Módulo de negocio: lógica/reglas/datos -->
+    <script src="ui.js"></script> <!-- Módulo de presentación: DOM, eventos y render -->
+
+</body>
+</html>

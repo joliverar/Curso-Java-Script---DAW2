@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> DOM 1 — Leer valores con getElementById + alert
+</h1>
+<input id = "idNombre" type = "texto" placeholder="Jino"></br>
+<input id = "idEdad" type = "numero" placeholder="33"></br>
+<input id = "idCiudad" type = "texto" placeholder="Lima"></br>
+<button id = "btnMostrar">Mostrar</button>
+
+<script>
+
+    "use strict";
+
+    const $nombre = document.getElementById("idNombre");
+    const $edad = document.getElementById("idEdad");
+    const $ciudad = document.getElementById("idCiudad");
+    const  $btn = document.getElementById("btnMostrar");
+    $btn.addEventListener("click", () => {
+
+        alert(`Nombre: ${$nombre.value} \nEdad: ${$edad.value} \nCiudad: ${$ciudad.value}`)
+    });
+
+
+</script>
+
+
+</body>
+</html>

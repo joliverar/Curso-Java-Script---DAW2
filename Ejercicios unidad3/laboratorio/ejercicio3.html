@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays 1 — map(): agrega campo total = cantidad * precio</h1>
+    <div id = "out"></div>
+    <script>
+        "use strict";
+        
+        const datos = [
+            {nombre: "NManzana", cantidad: 5, precio: 5.6 },
+            {nombre: "Durasno", cantidad: 4, precio: 4.6 },
+            {nombre: "Platano", cantidad: 1, precio: 1.6 },
+        ];
+
+        const conTotal = datos.map(p=> ({...p, total: Number((p.cantidad*p.precio).toFixed(2))
+        }) );
+
+  
+
+        const cols = ["nombre","cantidad","precio","total"];
+    const thead = `<thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead>`;
+    const tbody = `<tbody>${
+      conTotal.map(r=>`<tr>${
+        cols.map(c=>`<td class="${c!=="nombre"?"num":""}">${r[c]}</td>`).join("")
+      }</tr>`).join("")
+    }</tbody>`;
+    document.getElementById("out").innerHTML = `<table>${thead}${tbody}</table>`;
+    console.log("Original:", datos);
+    console.log("Con total:", conTotal);
+
+
+
+    </script>
+</body>
+</html>

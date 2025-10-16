@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Reto Arrays 2 — filter() + sort()</title>
+  <style>
+    table{border-collapse:collapse} td,th{border:1px solid #aaa;padding:6px}
+    .num{text-align:right;font-variant-numeric:tabular-nums}
+  </style>
+</head>
+<body>
+  <h1>Arrays 2 — filter(): categoría; sort(): precio asc</h1>
+  <label>Categoría: <input id="idCat" type="text" placeholder="Fruta"></label>
+  <button id="btnFiltrar">Aplicar</button>
+  <div id="out"></div>
+  <script>
+    "use strict";
+    const datos = [
+      { nombre: "Manzanas", categoria:"Fruta",   cantidad: 3, precio: 1.5 },
+      { nombre: "Pera",     categoria:"Fruta",   cantidad: 4, precio: 1.2 },
+      { nombre: "Leche 1L", categoria:"Lácteos", cantidad: 2, precio: 0.95 },
+      { nombre: "Pan",      categoria:"Pan",     cantidad: 5, precio: 0.75 }
+    ];
+    const id = x => document.getElementById(x);
+    const $cat = id("idCat");
+    const $out = id("out");
+    id("btnFiltrar").addEventListener("click", () => {
+      const cat = ($cat.value||"").trim().toLowerCase();
+      const filtrado = datos
+        .filter(p => p.categoria.toLowerCase() === cat)
+        .sort((a,b) => a.precio - b.precio);
+      render(filtrado);
+    });
+    function render(rows){
+      if(!rows.length){ $out.innerHTML = "<p>(Sin datos)</p>"; return; }
+      const cols = ["nombre","categoria","cantidad","precio"];
+      const thead = `<thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead>`;
+      const tbody = `<tbody>${
+        rows.map(r=>`<tr>${
+          cols.map(c=>`<td class="${c==="nombre"||c==="categoria"?"":"num"}">${c==="precio"?Number(r[c]).toFixed(2):r[c]}</td>`).join("")
+        }</tr>`).join("")
+      }</tbody>`;
+      $out.innerHTML = `<table>${thead}${tbody}</table>`;
+    }
+  </script>
+</body>
+</html>

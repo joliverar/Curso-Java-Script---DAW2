@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM 2 — Agregar elementos a una lista</h1>
+    <input id="idItem" type = "texto" placeholder="Tarea o Item">
+    <button id="btnAgregar">Agregar</button>
+    <ol id ="out"></ol>
+    <script>
+
+        "use strict";
+        const id = x =>document.getElementById(x);
+        const $item = document.getElementById("idItem");
+        const $btn = document.getElementById("btnAgregar");
+        const $ol = document.getElementById("out");
+
+        $btn.addEventListener("click", () => {
+            const texto = ($item.value || "").trim();
+
+            if(!texto) {alert("Escribe algun item"); return; }
+            $ol.innerHTML += `<li>${texto}</li>`;
+            $item.value ="";
+            $item.focus();
+
+            
+        });
+
+
+    </script>
+</body>
+</html>

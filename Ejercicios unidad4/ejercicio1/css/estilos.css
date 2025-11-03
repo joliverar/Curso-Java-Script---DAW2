@@ -1,0 +1,25 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 2em;
+  background: #f8f8f8;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+pre {
+  background: white;
+  padding: 1em;
+  border-radius: 5px;
+  margin-top: 1em;
+}

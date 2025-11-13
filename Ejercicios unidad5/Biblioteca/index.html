@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Gestión de Bibliotecas</title>
+</head>
+<body>
+
+    <h1>Gestor de Bibliotecas (UD2E6)</h1>
+
+    <nav>
+        <button data-accion="listado-autores">Autores</button>
+        <button data-accion="listado-libros">Libros</button>
+        <button data-accion="listado-bibliotecas">Bibliotecas</button>
+    </nav>
+
+    <section id="buscador">
+        <h3>Buscador</h3>
+        <form id="form-buscar">
+            <select name="tipo">
+                <option value="titulo">Buscar por título</option>
+                <option value="autor">Buscar por autor</option>
+            </select>
+            <input name="texto" placeholder="Buscar..." required>
+            <button>Buscar</button>
+        </form>
+    </section>
+
+    <div id="app">
+        <p>Seleccione una opción del menú.</p>
+    </div>
+
+    <script type="module" src="gestorBiblioteca.js"></script>
+</body>
+</html>

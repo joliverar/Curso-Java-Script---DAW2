@@ -1,0 +1,16 @@
+{
+  "concesionarios": [
+    { "id": 1, "nombre": "AutoRey", "ciudad": "Madrid", "telefono": "911223344" },
+    { "id": 2, "nombre": "MotorTop", "ciudad": "Barcelona", "telefono": "932112233" },
+    { "id": 3, "nombre": "CantabriaCars", "ciudad": "Santander", "telefono": "942998877" }
+  ],
+  "vehiculos": [
+    { "id": 1, "marca": "Toyota", "modelo": "Corolla", "precio": 18000, "disponible": true, "concesionarioId": 1 },
+    { "id": 2, "marca": "Seat", "modelo": "Ibiza", "precio": 15000, "disponible": true, "concesionarioId": 2 },
+    { "id": 3, "marca": "Peugeot", "modelo": "3008", "precio": 25000, "disponible": false, "concesionarioId": 3 }
+  ],
+  "clientes": [
+    { "id": 1, "nombre": "Juan Pérez", "dni": "12345678A", "telefono": "600112233" },
+    { "id": 2, "nombre": "María López", "dni": "87654321B", "telefono": "611223344" }
+  ]
+}

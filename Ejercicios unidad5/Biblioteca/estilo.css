@@ -1,0 +1,227 @@
+/* ================================
+   ESTILO GENERAL
+================================ */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+h2, h3 {
+    color: #34495e;
+}
+
+/* ================================
+   NAV SUPERIOR
+================================ */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background: #3498db;
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s ease;
+}
+
+nav button:hover {
+    background: #217dbb;
+}
+
+/* ================================
+   BUSCADOR
+================================ */
+#buscador {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+#buscador form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#buscador select,
+#buscador input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#buscador button {
+    background: #27ae60;
+    border: none;
+    padding: 10px 14px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#buscador button:hover {
+    background: #1e8449;
+}
+
+/* ================================
+   CONTENEDOR PRINCIPAL SPA (#app)
+================================ */
+#app {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 85%;
+    margin: auto;
+    min-height: 300px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   TABLAS
+================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th {
+    background: #2980b9;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Acciones en tablas */
+table td button {
+    background: #8e44ad;
+    border: none;
+    padding: 6px 10px;
+    color: white;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table td button:hover {
+    background: #732d91;
+}
+
+/* ================================
+   FORMULARIOS DINÁMICOS
+================================ */
+form {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form button[type="submit"],
+form button {
+    background: #16a085;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+form button:hover {
+    background: #12826d;
+}
+
+/* ================================
+   BOTONES SECUNDARIOS
+================================ */
+button[data-accion] {
+    background: #2ecc71;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button[data-accion]:hover {
+    background: #27ae60;
+}
+
+/* ================================
+   MENSAJES / ESTADOS
+================================ */
+.success {
+    background: #dff0d8;
+    padding: 12px;
+    border-left: 4px solid #3c763d;
+    margin-bottom: 15px;
+}
+
+.error {
+    background: #f2dede;
+    padding: 12px;
+    border-left: 4px solid #a94442;
+    margin-bottom: 15px;
+}
+
+/* ================================
+   LISTAS GENERALES
+================================ */
+ul {
+    margin-top: 12px;
+    padding-left: 20px;
+}
+
+li button {
+    background: #c0392b !important;
+}
+
+li button:hover {
+    background: #992d22 !important;
+}
+

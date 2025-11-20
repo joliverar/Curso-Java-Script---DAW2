@@ -1,0 +1,754 @@
+/* ========================
+   ESTILOS GENERALES
+======================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+h2, h3, h4 {
+    margin: 10px 0;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #999;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: white;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+
+/* ========================
+   NAVBAR
+======================== */
+
+.navbar {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    background: #ddd;
+    border-bottom: 1px solid #bbb;
+}
+
+
+/* ========================
+   VISTA GENERAL
+======================== */
+
+.vista-general {
+    padding: 20px;
+}
+
+
+/* ========================
+   FORMULARIO BUSCADOR
+======================== */
+
+.form-buscar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-select,
+.input-text {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}
+
+
+/* ========================
+   LISTADO DE VEHÍCULOS
+======================== */
+
+.titulo-y-boton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-vehiculos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* Tarjeta de vehículo */
+.vehiculo-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.vehiculo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vehiculo-acciones {
+    display: flex;
+    gap: 6px;
+}
+
+
+/* ========================
+   FORMULARIO VEHÍCULO
+======================== */
+
+.form-vehiculo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 350px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+/* ========================
+   REPARACIONES
+======================== */
+
+.lista-reparaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+/* Tarjeta de reparación */
+.reparacion-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.reparacion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reparacion-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* ========================
+   FORMULARIO REPARACIÓN
+======================== */
+
+.form-reparacion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 500px;
+}
+
+.lista-trabajos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Item de trabajo */
+.trabajo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+
+/* ========================
+   BOTONES ESPECIALES
+======================== */
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: white;
+}
+
+.btn:hover {
+    background: #e7e7e7;
+}
+
+.btn-nuevo {
+    background: #1e90ff;
+    border: 1px solid #0b66c3;
+    color: white;
+}
+
+.btn-nuevo:hover {
+    background: #1877d3;
+}
+
+.btn-guardar {
+    background: #28a745;
+    border: 1px solid #1c7f32;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background: #208638;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    border: 1px solid #b83d31;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #cf4435;
+}
+
+/* ======== TARJETAS ======== */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    margin-bottom: 15px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-total {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c7;
+}
+
+/* ======== BADGES ======== */
+.badges-estado {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 4px 8px;
+    font-size: 0.8em;
+    border-radius: 4px;
+    color: white;
+}
+
+.badge-ok { background: #28a745; }
+.badge-no { background: #dc3545; }
+.badge-pendiente { background: #ffc107; color: #222; }
+.badge-info { background: #17a2b8; }
+.badge-secondary { background: #6c757d; }
+
+/* ======== BOTONES ======== */
+.btn {
+    padding: 7px 14px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0069d9;
+}
+
+.btn-nuevo { background: #28a745; }
+.btn-danger { background: #dc3545; }
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* ======== LAYOUT ======== */
+.lista-vehiculos,
+.lista-reparaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+/* ====== TOAST ====== */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.toast {
+    background: #333;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: toastIn .4s forwards;
+}
+
+@keyframes toastIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast.success { background: #28a745; }
+.toast.error { background: #dc3545; }
+.toast.info { background: #007bff; }
+
+/* ====== MODAL ====== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+}
+
+.modal {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+}
+
+.modal button {
+    margin: 10px;
+}
+
+/* ====== BANDA SUPERIOR ====== */
+.info-banner {
+    padding: 10px;
+    background: #e8f0fe;
+    border-left: 6px solid #1a73e8;
+    color: #1a73e8;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* =====================================
+   REPORTES Y FILTROS — ESTILOS GLOBALES
+===================================== */
+
+/* Contenedor principal */
+.reportes-contenedor,
+.filtros-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+/* TITULOS */
+.reportes-titulo,
+.filtros-titulo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #1a73e8;
+}
+
+/* =====================================
+   SECCIÓN DE FILTROS
+===================================== */
+
+/* Contenedor de filtros */
+.filtros-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #f3f5f8;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #1a73e8;
+}
+
+/* Cada filtro */
+.filtro-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 180px;
+}
+
+.filtro-item label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filtro-item select,
+.filtro-item input {
+    padding: 7px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botón aplicar filtros */
+.boton-aplicar-filtro {
+    background: #1a73e8;
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.2s;
+}
+
+.boton-aplicar-filtro:hover {
+    background: #0d56b0;
+}
+
+/* =====================================
+   RESULTADOS DE FILTRO
+===================================== */
+
+.resultados-filtro {
+    margin-top: 20px;
+}
+
+.resultados-titulo {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-left: 5px solid #1a73e8;
+    padding-left: 10px;
+}
+
+.resultado-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultado-info p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.resultado-total {
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.btn-ver-detalle {
+    background: #0b8043;
+    padding: 7px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-ver-detalle:hover {
+    background: #066c35;
+}
+
+/* =====================================
+   REPORTES (CARDS DE ESTADÍSTICAS)
+===================================== */
+
+.reportes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reporte-card {
+    flex: 1 1 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.08);
+}
+
+.reporte-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.reporte-card .valor {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+/* =====================================
+   TABLAS DE REPORTES
+===================================== */
+
+.tabla-reportes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-reportes th,
+.tabla-reportes td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabla-reportes th {
+    background: #1a73e8;
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-reportes tr:hover {
+    background: #f2f6ff;
+}
+.reportes-contenedor ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reportes-contenedor li {
+    margin: 4px 0;
+    padding: 4px 0;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: #f1f3f4;
+    border-bottom: 3px solid #1a73e8;
+}
+
+/* BOTONES BASE */
+.btn-nav {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+/* ======================
+   TIPOS DE BOTONES
+====================== */
+
+.btn-primary {
+    background: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1559b0;
+}
+
+/* ESTADOS */
+.btn-warning {
+    background: #fbbc04;
+    color: #4a3c00;
+}
+
+.btn-danger {
+    background: #ea4335;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c62828;
+}
+
+.btn-success {
+    background: #34a853;
+    color: white;
+}
+
+/* INFORMACIÓN */
+.btn-info {
+    background: #4285f4;
+    color: white;
+}
+
+/* SECUNDARIOS */
+.btn-secondary {
+    background: #dadce0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #c6c8cc;
+}
+
+/* REPORTES */
+.btn-dark {
+    background: #3c4043;
+    color: white;
+}
+
+.btn-dark:hover {
+    background: #202124;
+}
+
+/* EXPORTAR */
+.btn-export {
+    background: #5f6368;
+    color: white;
+}
+
+.btn-export:hover {
+    background: #3c4043;
+}
+/* ===== DROPDOWN ===== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.dropdown-content button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background: #e8f0fe;
+}
+
+/* Mostrar menú al pasar */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.badges-estado {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* Badge genérico */
+.badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+/* Estados generales */
+.badge.ok {
+    background: #28a745;   /* verde */
+}
+
+.badge.no {
+    background: #dc3545;   /* rojo */
+}
+
+/* Estados específicos (colores personalizados) */
+.estado-presupuesto.ok {
+    background: #0d6efd;   /* azul */
+}
+
+.estado-presupuesto.no {
+    background: #6c757d;   /* gris */
+}
+
+.estado-aprobada.ok {
+    background: #ff9800;   /* naranja/aprobado */
+}
+
+.estado-aprobada.no {
+    background: #9c27b0;   /* púrpura/rechazada */
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+
+@media (max-width: 600px) {
+
+    .vehiculo-card,
+    .reparacion-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reparacion-acciones {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .titulo-y-boton {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

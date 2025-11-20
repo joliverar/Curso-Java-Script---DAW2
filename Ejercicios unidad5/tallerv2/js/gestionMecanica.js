@@ -1,5 +1,5 @@
 import { BD } from "./BD.js";
-
+// Clase GestiónMecánica: controla la SPA
 class gestionMecanica{
     #clienteBD;
     #contenedor;

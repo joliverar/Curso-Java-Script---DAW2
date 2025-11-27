@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas (Estático)</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="titulo">Gestión de Tareas</h1>
+
+        <nav class="menu">
+            <button data-vista="inicio">Inicio</button>
+            <button data-vista="tareas">Tareas</button>
+            <button data-vista="nueva">Nueva Tarea</button>
+        </nav>
+    </header>
+
+    <main id="vista">
+
+        <!-- VISTA INICIO -->
+        <section class="vista vista-inicio">
+            <h2>Bienvenido</h2>
+            <p>Sistema de gestión de tareas con CRUD completo.</p>
+        </section>
+
+        <!-- LISTADO DE TAREAS (flex) -->
+        <section class="vista vista-listado">
+            <h2>Listado de Tareas</h2>
+
+            <button class="btn btn-nueva">+ Nueva Tarea</button>
+
+            <div class="lista-tareas">
+                <div class="encabezado">
+                    <div class="col">ID</div>
+                    <div class="col">Título</div>
+                    <div class="col">Descripción</div>
+                    <div class="col">Fecha</div>
+                    <div class="col">Prioridad</div>
+                    <div class="col">Estado</div>
+                    <div class="col">Acciones</div>
+                </div>
+                <!-- Tarjeta de tarea -->
+           <div class="tarea">
+            <div class="col id">#1</div>
+            <div class="col titulo">Comprar pan</div>
+            <div class="col desc">Ir a la panadería del centro</div>
+            <div class="col fecha">2025-11-22</div>
+            <div class="col prioridad alta">Alta</div>
+            <div class="col estado pendiente">Pendiente</div>
+
+            <div class="acciones">
+                <button class="btn-ver">Ver</button>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-borrar">Borrar</button>
+            </div>
+        </div>
+
+        <div class="tarea">
+            <div class="col id">#2</div>
+            <div class="col titulo">Hacer ejercicio</div>
+            <div class="col desc">30 min de cardio + estiramientos</div>
+            <div class="col fecha">2025-11-21</div>
+            <div class="col prioridad baja">Baja</div>
+            <div class="col estado completada">Completada</div>
+
+            <div class="acciones">
+                <button class="btn-ver">Ver</button>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-borrar">Borrar</button>
+            </div>
+        </div>
+
+        <div class="tarea">
+            <div class="col id">#3</div>
+            <div class="col titulo">Enviar correo trabajo</div>
+            <div class="col desc">Enviar informe mensual al jefe</div>
+            <div class="col fecha">2025-11-23</div>
+            <div class="col prioridad media">Media</div>
+            <div class="col estado pendiente">Pendiente</div>
+
+            <div class="acciones">
+                <button class="btn-ver">Ver</button>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-borrar">Borrar</button>
+            </div>
+        </div>
+
+        <div class="tarea">
+            <div class="col id">#4</div>
+            <div class="col titulo">Estudiar JavaScript</div>
+            <div class="col desc">Repasar closures, POO y ES6 modules</div>
+            <div class="col fecha">2025-11-25</div>
+            <div class="col prioridad alta">Alta</div>
+            <div class="col estado pendiente">Pendiente</div>
+
+            <div class="acciones">
+                <button class="btn-ver">Ver</button>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-borrar">Borrar</button>
+            </div>
+        </div>
+
+
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="vista vista-formulario">
+            <h2>Nueva Tarea</h2>
+
+            <form class="form">
+
+                <label>Título</label>
+                <input type="text" placeholder="Ej: Comprar comida">
+
+                <label>Descripción</label>
+                <textarea placeholder="Detalles de la tarea"></textarea>
+
+                <label>Estado</label>
+                <select>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="completada">Completada</option>
+                </select>
+
+                <button type="submit" class="btn btn-guardar">Guardar</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>

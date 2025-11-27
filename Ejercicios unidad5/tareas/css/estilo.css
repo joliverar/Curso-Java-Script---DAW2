@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f2f2f2;
+}
+
+/* HEADER */
+.header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.menu {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.menu button {
+    padding: 8px 14px;
+    border: none;
+    background: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background: #777;
+}
+
+/* VISTAS */
+.vista {
+    padding: 20px;
+}
+
+/* LISTADO */
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tarea {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarea-info h3 {
+    margin: 0;
+}
+
+.estado {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+}
+
+.pendiente {
+    background: #D9534F;
+}
+
+.completada {
+    background: #5CB85C;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+.acciones button {
+    padding: 8px 14px;
+    border: none;
+    background: #d2030d;
+    color: white;
+    cursor: pointer;
+}
+
+.acciones button:hover{
+
+    background: #000000;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* FORMULARIO */
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    padding: 8px;
+}
+
+.btn-nueva {
+    background: #0275d8;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-guardar {
+    background: #5CB85C;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* ENCABEZADO TIPO TABLA */
+.encabezado {
+    display: flex;
+    background: #ddd;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.encabezado .col {
+    flex: 1;
+}
+
+/* FILAS TIPO TABLA */
+.tarea {
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.col {
+    flex: 1;
+}
+
+.id {
+    max-width: 40px;
+    font-weight: bold;
+}
+
+.prioridad {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+
+.prioridad.alta {
+    background: #d9534f;
+}
+
+.prioridad.media {
+    background: #f0ad4e;
+}
+
+.prioridad.baja {
+    background: #5bc0de;
+}
+
+.estado.pendiente {
+    background: #d9534f;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+}
+
+.estado.completada {
+    background: #5cb85c;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+

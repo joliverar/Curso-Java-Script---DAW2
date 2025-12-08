@@ -1,7 +1,24 @@
-body{
-    margin: 0;
+input, select {
+    width: 250px;
+    padding: 6px;
+    margin-top: 5px;
 }
 
-.input{
-    
+.error {
+    color: red;
+    font-size: 12px;
+    height: 14px;
+}
+
+.ok {
+    border: 2px solid green;
+}
+
+.mal {
+    border: 2px solid red;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
 }

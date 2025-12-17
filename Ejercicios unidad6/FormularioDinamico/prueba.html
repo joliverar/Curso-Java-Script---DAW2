@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UD3E6 Formulario Dinámico</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<form id="formAlumnos">
+
+    <h2>Selector de alumnos</h2>
+
+    <label>Ciclo:</label>
+    <select id="filtro">
+        <option value="Todos">Todos</option>
+        <option value="DAM">DAM</option>
+        <option value="DAW">DAW</option>
+        <option value="ASIR">ASIR</option>
+    </select>
+
+    <div id="contenedor">
+        <div id="colIzq" class="columna"></div>
+
+        <div id="colCentro" class="columnaCentro">
+            <button type="button" id="btnDerecha"> bajar</button>
+            <button type="button" id="btnIzquierda"> Subir </button>
+        </div>
+
+        <div id="colDer" class="columna"></div>
+    </div>
+
+    <button id="btnEnviar">Enviar</button>
+</form>
+
+<div id="resultado"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

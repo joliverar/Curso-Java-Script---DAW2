@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento de Users</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <h1>Usuarios</h1>
+
+    <div>
+        <label>Buscar por nombre:</label>
+        <input type="text" id="filtroNombre" placeholder="Introduce nombre...">
+    </div>
+
+    <div>
+        <label>Elementos por página:</label>
+        <select id="selectCantidad">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="todos">Todos</option>
+        </select>
+    </div>
+
+    <div id="listaUsuarios"></div>
+
+    <div id="paginacion" class="paginador"></div>
+
+    <div id="errores"></div>
+
+    <button onclick="location.href='index.html'">Volver</button>
+
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/crud-users.js"></script>
+
+</body>
+</html>

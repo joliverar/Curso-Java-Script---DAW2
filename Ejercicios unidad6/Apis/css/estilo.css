@@ -1,0 +1,59 @@
+.cardUser {
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f9f9f9;
+}
+
+.cardUser h3 {
+    margin-top: 0;
+}
+
+.accion {
+    margin-right: 5px;
+}
+
+.paginador button {
+    margin: 5px;
+}
+
+.pagina-activa {
+    background: black;
+    color: white;
+}
+.card {
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin: 10px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.errorCard {
+    background: #ffdfdf;
+    border: 1px solid red;
+}
+.cardPost {
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f8f8f8;
+}
+
+.cardPost h3 {
+    margin-top: 0;
+}
+
+.cardPost button {
+    margin-right: 5px;
+}
+
+.paginador {
+    margin-top: 20px;
+}
+
+.pagina-activa {
+    background: black;
+    color: white;
+    font-weight: bold;
+}

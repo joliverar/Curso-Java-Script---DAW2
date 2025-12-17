@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input {
+    width: 250px;
+    padding: 6px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.ok {
+    border: 2px solid green !important;
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+button {
+    padding: 8px 14px;
+    margin-top: 10px;
+}

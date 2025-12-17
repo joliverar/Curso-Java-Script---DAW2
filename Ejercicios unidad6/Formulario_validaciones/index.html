@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UD3E5 con document.forms</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
-    <form >
-        <h3>Registro</h3>
-        <div>
-            <label for="nombre">Nombre completo</label>
-            <input type="number" mame="nombre">
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="email">Correo electrónico</label>
-            <input type="email" mame="email" required>
-            <span class="error"></span>
-    
-        </div>
-        <div>
-            <label for="password">Contraseña</label>
 
-            <input type="password" mame="password" \{} required>
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="confirmPassword">Confirmar contraseña</label>
-            <input type="password" mame="confirmPassword" minlength="8" required>
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="fechaNacimiento">Fecha de nacimiento</label>
-            <input type="date" mame="fechaNacimiento" minlength="8" required>
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="telefono">Teléfono (opcional)</label>
-            <input type="text" mame="telefono" required>
-            <span class="error"></span>
-        </div>
-        <div>
-            
-            <label for="genero">Género</label>
-            <select name="">
-                <option value="">Seleccione</option>
-                <option value="">Masculino</option>
-                <option value="">Femenino</option>
-            </select>
-            
-        </div>
-        <div>
-            <input type="checkbox" required>
-            <label for="terminos">Acepto los términos y condiciones</label>
-        </div>
-        <button type="submit">Registrarse</button>
-    </form>
+<form name="miformulario" id="formRegistro">
+    <h3>Registro</h3>
 
-    <div id="resultado"></div>
+    <div>
+        <label>Nombre completo</label>
+        <input name="nombre" type="text">
+        <small class="error"></small>
+    </div>
 
-    <script src="app.js"></script>
+    <div>
+        <label>Correo electrónico</label>
+        <input name="correo" type="email">
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <label>Contraseña</label>
+        <input name="password" type="password">
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <label>Confirmar contraseña</label>
+        <input name="confirmar" type="password">
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <label>Fecha de nacimiento</label>
+        <input name="fecha" type="date">
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <label>Teléfono (opcional)</label>
+        <input name="telefono" type="text">
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <label>Género</label>
+        <select name="genero">
+            <option value="">Seleccione</option>
+            <option>Masculino</option>
+            <option>Femenino</option>
+            <option>Otro</option>
+        </select>
+        <small class="error"></small>
+    </div>
+
+    <div>
+        <input name="terminos" type="checkbox">
+        <label>Acepto los términos</label>
+        <small class="error"></small>
+    </div>
+
+    <button id="btnEnviar" disabled>Registrarse</button>
+</form>
+
+<div id="resultado"></div>
+
+<script src="app.js"></script>
 </body>
-
 </html>

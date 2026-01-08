@@ -26,16 +26,13 @@ function ok(campo) {
     campo.parentElement.querySelector('.error').textContent = "";
 }
 
-//validaciones
+// ----------------- VALIDACIONES ----------------------
 
 function validarNombre() {
     let v = campos.nombre.value.trim();
     if (v.length < 3) return error(campos.nombre, "Min 3 caracteres");
     if (/\d/.test(v)) return error(campos.nombre, "No números");
     ok(campos.nombre); return true;
-
-
-
 }
 
 function validarCorreo() {
@@ -45,15 +42,18 @@ function validarCorreo() {
     ok(campos.correo); return true;
 }
 
-function validarPassword(){
-    let p = campos.password.value.trim();
-    if(p.length < 8) return error(campos.password, "Minimo 8 caracteres");
+function validarPassword() {
+    let v = campos.password.value;
+    if (v.length < 8) return error(campos.password, "Min 8 caracteres");
+    if (!/[A-Z]/.test(v)) return error(campos.password, "Debe tener mayúscula");
+    if (!/[0-9]/.test(v)) return error(campos.password, "Debe tener número");
+    if (!/[^A-Za-z0-9]/.test(v)) return error(campos.password, "Debe tener símbolo");
     ok(campos.password); return true;
 }
 
-function validarConfirmar(){
-    let t = campos.confirmar.value.trim();
-    if(t.length < 8  ) return error(campos.confirmar, "Minimo 8 caracteres");
+function validarConfirmar() {
+    if (campos.password.value !== campos.confirmar.value)
+        return error(campos.confirmar, "No coinciden");
     ok(campos.confirmar); return true;
 }
 
@@ -65,11 +65,16 @@ function validarFecha() {
     ok(campos.fecha); return true;
 }
 
+function validarTelefono() {
+    let v = campos.telefono.value.trim();
+    if (!v) { ok(campos.telefono); return true; }
+    if (!/^\d{9}$/.test(v)) return error(campos.telefono, "9 dígitos");
+    ok(campos.telefono); return true;
+}
 
 function validarGenero() {
     if (!campos.genero.value) return error(campos.genero, "Seleccione uno");
     ok(campos.genero); return true;
-
 }
 
 function validarTerminos() {
@@ -77,15 +82,14 @@ function validarTerminos() {
     ok(campos.terminos); return true;
 }
 
-
 // ----------------- VALIDACIÓN GLOBAL ----------------------
 
 function validarTodo() {
     const esOK =
         validarNombre() &&
+        validarCorreo() &&
         validarPassword() &&
         validarConfirmar() &&
-        validarCorreo() &&
         validarFecha() &&
         validarTelefono() &&
         validarGenero() &&
@@ -111,8 +115,6 @@ formulario.addEventListener("submit", (e) => {
         <h3 style="color:green">Registro exitoso</h3>
         <pre>${JSON.stringify({
             nombre: campos.nombre.value,
-            password: campos.password.value,
-            confirmar: campos.confirmar.value,
             correo: campos.correo.value,
             fecha: campos.fecha.value,
             telefono: campos.telefono.value,
@@ -120,4 +122,3 @@ formulario.addEventListener("submit", (e) => {
         }, null, 2)}</pre>
     `;
 });
-

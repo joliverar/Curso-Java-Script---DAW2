@@ -1,0 +1,31 @@
+body {
+  font-family: Arial;
+  background: #0b6623;
+  color: white;
+}
+
+.mesa {
+  text-align: center;
+}
+
+.zona {
+  margin: 20px;
+}
+
+.cartas {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.carta {
+  width: 60px;
+  height: 80px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+

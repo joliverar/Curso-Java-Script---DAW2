@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.app {
+    display: flex;
+    gap: 1rem;
+    background-color:#f4f4f4;
+    padding: 1rem;
+
+}
+
+.panel {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.panel--form {
+    width: 350px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.panel--list {
+    width: 100%;
+}
+
+.aviso {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    
+}
+
+.aviso__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.aviso__titulo {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    color:white;
+    border: none;
+}
+
+.btn--guardar {
+    background-color: blueviolet;
+    
+
+}
+.btn--editar {
+    background-color: rgb(238, 113, 10);
+
+}
+.btn--delete {
+    background-color: rgb(34, 91, 224);
+
+}
+.btn--api {
+    background-color: rgb(226, 43, 83);
+    width: 315px;
+    margin-top: 10px;
+
+}
+
+.form__input {
+    padding: 0.4rem;
+}
+
+.form__select {
+    padding: 0.4rem;
+}
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Incidencias</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1 class="header__title">Gestión de Incidencias</h1>
+</header>
+
+<main class="app">
+
+    <!-- PANEL FORMULARIO -->
+    <section class="panel panel--form">
+        <h2 class="panel__title" id="formTitle">Crear incidencia</h2>
+
+        <form class="form" id="incidenciaForm">
+            <input type="hidden" id="incidenciaId" name="id">
+
+            <div class="form__field">
+                <label class="form__label">Título</label>
+                <input class="form__input" name="titulo" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Descripción</label>
+                <textarea class="form__input" name="descripcion" rows="4" required></textarea>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Prioridad</label>
+                <select class="form__select" name="prioridad">
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Estado</label>
+                <select class="form__select" name="estado">
+                    <option value="Abierta">Abierta</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Cerrada">Cerrada</option>
+                </select>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Fecha</label>
+                <input class="form__input" type="date" name="fecha" required>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+                Guardar
+            </button>
+        </form>
+    </section>
+
+    <!-- PANEL LISTADO -->
+    <section class="panel panel--list">
+        <h2 class="panel__title">Listado de incidencias</h2>
+
+        <!-- HERRAMIENTAS -->
+        <div class="tools">
+            <input
+                type="text"
+                id="searchInput"
+                class="tools__input"
+                placeholder="Buscar por título o descripción">
+
+            <select id="filterPrioridad" class="tools__select">
+                <option value="">Todas las prioridades</option>
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+            </select>
+
+            <select id="filterEstado" class="tools__select">
+                <option value="">Todos los estados</option>
+                <option value="Abierta">Abierta</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Cerrada">Cerrada</option>
+            </select>
+
+            <select id="orderBy" class="tools__select">
+                <option value="">Sin ordenar</option>
+                <option value="titulo">Título</option>
+                <option value="fecha">Fecha</option>
+            </select>
+        </div>
+
+        <!-- LISTADO -->
+        <div class="incidencias" id="incidenciasList"></div>
+    </section>
+
+</main>
+
+<script src="app.js" defer></script>
+</body>
+
+</html>

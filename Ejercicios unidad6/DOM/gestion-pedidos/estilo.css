@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 1rem;
+    background-color: rgb(254, 240, 255);
+}
+
+.header {
+    font-size: 2rem;
+    padding: 1.5rem;
+    background-color: black;
+    color:#f5f5f5;
+}
+
+.app {
+    display: flex;
+    gap: 1.5rem;
+
+}
+.panel {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+}
+
+.panel--form {
+    width: 350px;
+}
+
+.panel--list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pedido {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.filtros{
+    display: flex;
+    gap: 1rem;
+}
+
+.pedido__info{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.pedido__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.pedido__actions button {
+    height: 2rem;
+}
+.tools {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.pedido__titulo{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.btn {
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border:  solid 1px #f5f5f5;
+    color: white;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 0.3rem;
+}

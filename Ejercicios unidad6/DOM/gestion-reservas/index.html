@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Gestion de reservas</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__title">Gestion de reservas </div>
+        </header>
+    <main class="app">
+        <section class="panel panel--form">
+            <form class="form" id="form">
+                <input type= "hidden" name="id" id="idForm">
+                <label>Cliente</label>
+                <input name="cliente" required>
+                <label>Servicio</label>
+                <textarea name="servicio" rows="6" required></textarea>
+                <label>Fecha</label>
+                <input name="fecha" type="date">
+                <label>Estado</label>
+                <select name="estado">
+                    <option>Pendiente</option>
+                    <option>Confirmado</option>
+                    <option>Cancelado</option>
+                </select>
+                <button type="submit" class="btn btn--guardar">Enviar</button>
+            </form>
+
+            <button class="btn btn--api" id = "btnApi">Cargar datos desde api</button>
+        </section>
+        <section class="panel panel--list">
+            <div class="tools">
+                <input id="searhInput" placeholder="buecar por cliente y servicio">
+                <select id="filterEstado">
+                    <option value="">Todos</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Confirmado">Confirmado</option>
+                    <option value="Cancelado">Canelado</option>
+                </select>
+                <select id="orderBy">
+                    <option value="">No ordenado</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="fecha">Fecha</option>
+                </select>
+            </div>
+            <div class="panel__list" id="reservasList"></div>
+        </section>
+        <script type="module" src="js/app.js"></script>
+    </main>
+</body>
+</html>

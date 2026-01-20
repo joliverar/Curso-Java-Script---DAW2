@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.menu button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.menu__activo {
+    background: #2b7cff;
+    color: white;
+}
+
+.vista {
+    display: none;
+}
+
+#vista-formulario {
+    display: block;
+}
+
+.reserva {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reserva--seleccionada {
+    background: #e6f2ff;
+    border-left: 4px solid #2b7cff;
+}

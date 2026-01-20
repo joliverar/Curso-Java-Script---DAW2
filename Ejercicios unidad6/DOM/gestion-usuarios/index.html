@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1 class="header__title">Gestión de Usuarios</h1>
+</header>
+
+<main class="app">
+
+    <!-- FORMULARIO -->
+
+
+    <section class="panel panel--form">
+        <h2 class="panel__title" id="formTitle">Alta de usuario</h2>
+
+        <form class="form" id="userForm">
+            <input type="hidden" name="id" id="userId">
+
+            <div class="form__field">
+                <label class="form__label">Nombre</label>
+                <input class="form__input" name="nombre" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Apellidos</label>
+                <input class="form__input" name="apellidos" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Email</label>
+                <input class="form__input" name="email" type="email" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Rol</label>
+                <select class="form__select" name="rol">
+                    <option>Administrador</option>
+                    <option>Empleado</option>
+                    <option>Invitado</option>
+                </select>
+            </div>
+
+            <button class="btn btn--primary" type="submit">
+                Guardar
+            </button>
+        </form>
+    </section>
+
+    <!-- LISTADO -->
+ <section class="panel panel--list">
+    <h2 class="panel__title">Usuarios</h2>
+
+    <!-- HERRAMIENTAS -->
+    <div class="tools">
+        <input
+            type="text"
+            id="searchInput"
+            class="tools__input"
+            placeholder="Buscar por nombre o email">
+
+        <select id="filterRole" class="tools__select">
+            <option value="">Todos los roles</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Invitado">Invitado</option>
+        </select>
+
+        <select id="orderBy" class="tools__select">
+            <option value="">Sin ordenar</option>
+            <option value="nombre">Nombre</option>
+            <option value="email">Email</option>
+        </select>
+    </div>
+
+    <div class="users" id="usersList"></div>
+</section>
+
+
+</main>
+
+<script src="app2.js"></script>
+</body>
+</html>
+

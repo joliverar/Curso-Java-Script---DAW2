@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Avisos</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Gestion de avisos de mantenimiento</h1>
+    </header>
+    
+    <main class="app">
+        <section class="panel panel--form" >
+            <form id="Form" class="form">
+                <input class="form__input" type="hidden" id="idForm" name="id">
+                <label>Titulo</label>
+                <input class="form__input" name="titulo" name="titulo" required>
+                <label>Descripcion</label>
+                <textarea class="form__input" row="10" name="descripcion"></textarea>
+                <label>Prioridad</label>
+                <select class="form__select" name="prioridad">
+                    <option>Alta</option>
+                    <option>Media</option>
+                    <option>Baja</option>
+                </select>
+                <label>Fecha</label>
+                <input class="form__input" type="date" name="fecha">
+                <button type="submit" class="btn btn--guardar">Guardar</button>
+                
+            </form>
+            <button id="btnApi" class="btn btn--api">Cargar avisos desde api</buttom>
+        </section>
+        <section class="panel panel--list">
+
+            <div class="tools">
+                <input type="text" id="searchInput" placeholder="Buscar por titulo o descripcion">
+                <select id="filterPrioridad">
+                    <option value="">Todas las opciones</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+                <select id="orderBy">
+                    <option value="">No ordenado</option>
+                    <option value="titulo">Titulo</option>
+                    <option value="fecha">Fecha</option>
+                </select>
+            </div>
+            <div id="listAvisos"></div>
+
+        </section>
+
+
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

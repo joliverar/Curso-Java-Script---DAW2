@@ -1,32 +1,31 @@
-function ListaLinea({ ventas, onEditar, onEliminar }) {
-  return (
-    <div className="users">
-      {ventas.map(v => (
-        <div className="user" key={v.id}>
-          <div className="user__info">
-            <span className="user__name">{v.servicio}</span>
-            <span>{v.descripcion}</span>
-            <span>{v.cliente}</span>
-            <span>{v.email}</span>
-            <span>{v.monto} €</span>
-            <span>{v.estado}</span>
-            <span>{v.fecha}</span>
-          </div>
+import { memo } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
-          <div className="user__actions">
-            <button className="btn btn--edit" onClick={() => onEditar(v)}>
-              Editar
-            </button>
-            <button className="btn btn--delete" onClick={() => onEliminar(v.id)}>
-              Eliminar
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
+function ListaLinea({ modulo }) {
+  const { id, nombre, horas } = modulo;
+  const navegar = useNavigate();
+
+  const navegarConId = () => {
+    navegar(`/detalles/${id}`);
+  };
+
+  const navegarConState = () => {
+    navegar("/detallesstate", { state: { id } });
+  };
+
+  return (
+    <p>
+      <strong>{nombre}</strong> – Horas: {horas}
+      <br />
+      <button onClick={navegarConId}>Detalles (URL)</button>{" "}
+      <button onClick={navegarConState}>Detalles (STATE)</button>
+      <br />
+      <Link to={`/detalles/${id}`}>Link URL</Link>{" "}
+      <Link to="/detallesstate" state={{ id }}>
+        Link STATE
+      </Link>
+    </p>
   );
 }
 
-export default TablaVentas;
-
-
+export default memo(ListaLinea);

@@ -1,46 +1,40 @@
-const API_URL = "https://jsonplaceholder.typicode.com/posts";
+const negocio = (function () {
+  console.log("Cargando negocio");
 
-export async function obtenerVentas() {
-  const res = await fetch(`${API_URL}?_limit=5`);
-  if (!res.ok) throw new Error("Error al obtener ventas");
+  const modulos = [
+    { id: 1, nombre: "Diseño de interfaces web", horas: 5 },
+    { id: 2, nombre: "Desarrollo web en entorno cliente", horas: 9 },
+    { id: 3, nombre: "Despliegue de aplicaciones web", horas: 6 },
+  ];
 
-  const data = await res.json();
+  async function obtenerModulos() {
+    return modulos;
+  }
 
-  return data.map(post => ({
-    id: post.id.toString(),
-    servicio: post.title,
-    descripcion: post.body,
-    cliente: "Cliente demo",
-    monto: 30,
-    email: "demo@email.com",
-    estado: "Pendiente",
-    fecha: new Date().toISOString().split("T")[0]
-  }));
-}
+  async function obtenerModulo(id) {
+    for (let modulo of modulos) {
+      if (modulo.id == id) {
+        return modulo;
+      }
+    }
+    return null;
+  }
 
-export async function crearVenta(venta) {
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(venta)
-  });
-  if (!res.ok) throw new Error("Error al crear venta");
-  return res.json();
-}
+  async function actualizarModulo(modulo) {
+    if ("id" in modulo) {
+      let moduloBD = await obtenerModulo(modulo.id);
+      if (moduloBD) {
+        moduloBD.nombre = modulo.nombre;
+        moduloBD.horas = modulo.horas;
+      }
+    }
+  }
 
-export async function actualizarVenta(venta) {
-  const res = await fetch(`${API_URL}/${venta.id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(venta)
-  });
-  if (!res.ok) throw new Error("Error al actualizar venta");
-  return res.json();
-}
+  return {
+    obtenerModulos,
+    obtenerModulo,
+    actualizarModulo,
+  };
+})();
 
-export async function eliminarVenta(id) {
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: "DELETE"
-  });
-  if (!res.ok) throw new Error("Error al eliminar venta");
-}
+export default negocio;

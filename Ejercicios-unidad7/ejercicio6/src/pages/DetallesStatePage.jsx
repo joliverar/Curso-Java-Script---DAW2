@@ -1,19 +1,20 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import negocio from "../core/Negocio";
 
-function DetallesPage() {
-  const { id } = useParams();
+function DetallesStatePage() {
+  const location = useLocation();
   const navegar = useNavigate();
 
+  const id = location.state?.id;
   const [modulo, setModulo] = useState(null);
 
-  // 🔹 1. Cargar datos al entrar
   useEffect(() => {
-    cargarModulo(id);
+    if (id) {
+      cargarModulo(id);
+    }
   }, [id]);
 
-  // 🔹 2. Función que SÍ existe
   const cargarModulo = async (id) => {
     try {
       const respuesta = await negocio.obtenerModulo(id);
@@ -23,25 +24,20 @@ function DetallesPage() {
     }
   };
 
-  // 🔹 3. Manejo de cambios del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    const actualizado = {
+    setModulo({
       ...modulo,
       [name]: value,
-    };
-
-    setModulo(actualizado);
+    });
   };
 
-  // 🔹 4. Envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     guardarModulo();
   };
 
-  // 🔹 5. Guardar y volver a la lista
   const guardarModulo = async () => {
     try {
       await negocio.actualizarModulo(modulo);
@@ -51,14 +47,16 @@ function DetallesPage() {
     }
   };
 
+  if (!id) {
+    return <h2>Error: no se recibió el ID</h2>;
+  }
+
   return (
     <>
-      <h1>Editar módulo</h1>
+      <h1>Editar módulo (STATE)</h1>
 
       {modulo && (
         <form onSubmit={handleSubmit}>
-          <input type="hidden" name="id" value={modulo.id} />
-
           <label>Nombre:</label>
           <input
             type="text"
@@ -85,4 +83,4 @@ function DetallesPage() {
   );
 }
 
-export default DetallesPage;
+export default DetallesStatePage;

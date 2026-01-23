@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-//import './index.css'
-// import App from './App.jsx'
-import AppEnrutador from "./routers/AppEnrutador.jsx";
-createRoot(document.getElementById("root")).render(
-<StrictMode>
-{/* <App /> */}
-<AppEnrutador />
-</StrictMode>
-);
+import AppEnrutador from "./routers/AppEnrutador";
+import { SeguridadProvider } from "./contexts/SeguridadProvider";
 
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <SeguridadProvider>
+      <AppEnrutador />
+    </SeguridadProvider>
+  </StrictMode>,
+);

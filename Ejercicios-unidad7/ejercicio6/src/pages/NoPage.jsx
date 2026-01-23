@@ -1,7 +1,9 @@
-function HomePage(){
-    return (<>
-    <h1>Págian de lista</h1>
-    
-    </>)
+function NoPage() {
+  return (
+    <>
+      <h1>Página no encontrada</h1>
+    </>
+  );
 }
-export default HomePage;
+
+export default NoPage;

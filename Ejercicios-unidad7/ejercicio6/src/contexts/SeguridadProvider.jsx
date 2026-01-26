@@ -1,15 +1,17 @@
 import { createContext, useState } from "react";
 
-/* 1️⃣ Crear el contexto */
+// Creamos el contexto de seguridad
 const SeguridadContext = createContext();
 
-/* 2️⃣ Crear el provider */
+// Provider que envuelve la aplicación
 function SeguridadProvider({ children }) {
+  // Estado global de seguridad
   const [datos, setDatos] = useState({
     usuario: "",
     tienePermisos: false,
   });
 
+  // Simula el inicio de sesión
   const logIn = async (nombre) => {
     setDatos({
       usuario: nombre,
@@ -17,6 +19,7 @@ function SeguridadProvider({ children }) {
     });
   };
 
+  // Simula el cierre de sesión
   const logOut = async () => {
     setDatos({
       usuario: "",
@@ -24,14 +27,9 @@ function SeguridadProvider({ children }) {
     });
   };
 
+  // Proporcionamos los datos y funciones al resto de la app
   return (
-    <SeguridadContext.Provider
-      value={{
-        datos,
-        logIn,
-        logOut,
-      }}
-    >
+    <SeguridadContext.Provider value={{ datos, logIn, logOut }}>
       {children}
     </SeguridadContext.Provider>
   );

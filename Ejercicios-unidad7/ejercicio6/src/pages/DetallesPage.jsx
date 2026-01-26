@@ -1,86 +1,84 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import negocio from "../core/Negocio";
+import negocio from "../core/NegocioApi";
 
 function DetallesPage() {
   const { id } = useParams();
   const navegar = useNavigate();
 
-  const [modulo, setModulo] = useState(null);
+  const [modulo, setModulo] = useState({
+    id: "",
+    nombre: "",
+    horas: "",
+  });
 
-  // 🔹 1. Cargar datos al entrar
+  const [cargado, setCargado] = useState(false);
+
   useEffect(() => {
-    cargarModulo(id);
-  }, [id]);
+    cargarModulo();
+  }, []);
 
-  // 🔹 2. Función que SÍ existe
-  const cargarModulo = async (id) => {
-    try {
-      const respuesta = await negocio.obtenerModulo(id);
-      setModulo(respuesta);
-    } catch (e) {
-      console.log(e);
-    }
+  const cargarModulo = async () => {
+    const datos = await negocio.obtenerModulo(id);
+    setModulo({
+      id: datos.id,
+      nombre: datos.nombre,
+      horas: datos.horas,
+    });
+    setCargado(true);
   };
 
-  // 🔹 3. Manejo de cambios del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    const actualizado = {
-      ...modulo,
+    setModulo((prev) => ({
+      ...prev,
       [name]: value,
-    };
-
-    setModulo(actualizado);
+    }));
   };
 
-  // 🔹 4. Envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    guardarModulo();
-  };
-
-  // 🔹 5. Guardar y volver a la lista
-  const guardarModulo = async () => {
+  const guardar = async () => {
     try {
-      await negocio.actualizarModulo(modulo);
+      if (modulo.nombre.trim() === "") {
+        alert("Nombre obligatorio");
+        return;
+      }
+
+      if (modulo.horas === "" || isNaN(modulo.horas)) {
+        alert("Horas incorrectas");
+        return;
+      }
+
+      const resp = await negocio.actualizarModulo({
+        id: modulo.id,
+        title: modulo.nombre,
+        price: Number(modulo.horas),
+      });
+
+      alert("Edición realizada correctamente ✔️");
+      console.log("RESPUESTA UPDATE:", resp);
+
       navegar("/lista");
     } catch (e) {
-      console.log(e);
+      alert("Error al guardar el módulo");
     }
   };
+
+  if (!cargado) return <p>Cargando...</p>;
 
   return (
     <>
       <h1>Editar módulo</h1>
 
-      {modulo && (
-        <form onSubmit={handleSubmit}>
-          <input type="hidden" name="id" value={modulo.id} />
+      <input name="nombre" value={modulo.nombre} onChange={handleChange} />
 
-          <label>Nombre:</label>
-          <input
-            type="text"
-            name="nombre"
-            value={modulo.nombre}
-            onChange={handleChange}
-          />
+      <input
+        type="number"
+        name="horas"
+        value={modulo.horas}
+        onChange={handleChange}
+      />
 
-          <br />
-
-          <label>Horas:</label>
-          <input
-            type="number"
-            name="horas"
-            value={modulo.horas}
-            onChange={handleChange}
-          />
-
-          <br />
-          <button type="submit">Guardar</button>
-        </form>
-      )}
+      <button onClick={guardar}>Guardar</button>
     </>
   );
 }

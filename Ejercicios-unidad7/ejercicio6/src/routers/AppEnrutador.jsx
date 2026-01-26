@@ -1,3 +1,7 @@
+// BrowserRouter gestiona las rutas
+// Suspense permite la carga diferida
+// lazy carga las páginas solo cuando se necesitan
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 

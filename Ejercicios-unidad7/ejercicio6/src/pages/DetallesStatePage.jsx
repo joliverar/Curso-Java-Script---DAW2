@@ -1,84 +1,64 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import negocio from "../core/Negocio";
+import negocio from "../core/NegocioApi";
 
 function DetallesStatePage() {
   const location = useLocation();
   const navegar = useNavigate();
 
   const id = location.state?.id;
-  const [modulo, setModulo] = useState(null);
+
+  const [nombre, setNombre] = useState("");
+  const [horas, setHoras] = useState("");
+  const [cargado, setCargado] = useState(false);
 
   useEffect(() => {
-    if (id) {
-      cargarModulo(id);
-    }
+    if (id) cargarModulo();
   }, [id]);
 
-  const cargarModulo = async (id) => {
-    try {
-      const respuesta = await negocio.obtenerModulo(id);
-      setModulo(respuesta);
-    } catch (e) {
-      console.log(e);
-    }
+  const cargarModulo = async () => {
+    const datos = await negocio.obtenerModulo(id);
+    setNombre(datos.nombre);
+    setHoras(datos.horas);
+    setCargado(true);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const guardar = async () => {
+    if (nombre.trim() === "") {
+      alert("Nombre obligatorio");
+      return;
+    }
 
-    setModulo({
-      ...modulo,
-      [name]: value,
+    if (horas === "" || isNaN(horas) || Number(horas) <= 0) {
+      alert("Horas incorrectas");
+      return;
+    }
+
+    await negocio.actualizarModulo({
+      id,
+      title: nombre,
+      price: Number(horas),
     });
+
+    navegar("/lista");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    guardarModulo();
-  };
-
-  const guardarModulo = async () => {
-    try {
-      await negocio.actualizarModulo(modulo);
-      navegar("/lista");
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  if (!id) {
-    return <h2>Error: no se recibió el ID</h2>;
-  }
+  if (!id) return <h2>Error: no se recibió el ID</h2>;
+  if (!cargado) return <p>Cargando...</p>;
 
   return (
     <>
       <h1>Editar módulo (STATE)</h1>
 
-      {modulo && (
-        <form onSubmit={handleSubmit}>
-          <label>Nombre:</label>
-          <input
-            type="text"
-            name="nombre"
-            value={modulo.nombre}
-            onChange={handleChange}
-          />
+      <input value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
-          <br />
+      <input
+        type="number"
+        value={horas}
+        onChange={(e) => setHoras(e.target.value)}
+      />
 
-          <label>Horas:</label>
-          <input
-            type="number"
-            name="horas"
-            value={modulo.horas}
-            onChange={handleChange}
-          />
-
-          <br />
-          <button type="submit">Guardar</button>
-        </form>
-      )}
+      <button onClick={guardar}>Guardar</button>
     </>
   );
 }

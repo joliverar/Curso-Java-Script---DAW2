@@ -1,13 +1,27 @@
 import { Link } from "react-router-dom";
-function Navbar(){
-    return (<>
-    <h1>Página de Menu</h1>
-     <nav style={{ display: "flex", gap: "1rem" }}>
-      <Link to="/"  >Inicio</Link>
-      <Link to="/coches" >Coches</Link>
-      <Link to="/login" >Login</Link>
-      <Link to="/*" >Lo quqe sea</Link>
+import { useAuth } from "../context/AuthContext";
+
+function Navbar() {
+  const { usuario, logout } = useAuth();
+
+  return (
+    <nav className="navbar">
+      <Link to="/">Inicio</Link>
+
+      {usuario && <Link to="/coches">Coches</Link>}
+
+      {!usuario && <Link to="/login">Login</Link>}
+
+      {usuario && (
+        <>
+          <span style={{ marginLeft: "1rem" }}>{usuario.nombre}</span>
+          <button onClick={logout} style={{ marginLeft: "1rem" }}>
+            Logout
+          </button>
+        </>
+      )}
     </nav>
-    </>)
+  );
 }
+
 export default Navbar;

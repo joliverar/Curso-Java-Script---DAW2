@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
+import ProtectedRoute from "./ProtectedRoute";
 
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
@@ -11,14 +12,29 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Layout general */}
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/coches" element={<CochesPage />} />
+
+          <Route
+            path="/coches"
+            element={
+              <ProtectedRoute>
+                <CochesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/coches/nuevo"
+            element={
+              <ProtectedRoute>
+                <CocheFormPage />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="/coches/:id" element={<CocheFormPage />} />
 
-          {/* Ruta error */}
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

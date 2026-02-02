@@ -1,0 +1,44 @@
+.coches-page {
+  padding: 1rem;
+}
+
+.coches-tools {
+  margin-bottom: 1rem;
+}
+
+.coches-buscador {
+  padding: 0.5rem;
+  width: 300px;
+}
+
+.coches-header,
+.coches-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.coches-header {
+  font-weight: bold;
+  background-color: #eee;
+}
+
+.coches-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.coches-header > div,
+.coches-row > div {
+  flex: 1;
+}
+
+.coches-paginacion {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.coches-row-actions {
+  display: flex;
+  gap: 0.5rem;
+}

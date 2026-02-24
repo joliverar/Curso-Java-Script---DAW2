@@ -1,0 +1,52 @@
+.container {
+  width: 90%;
+  margin: 30px auto;
+  font-family: Arial;
+}
+
+.tabla {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.fila {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.fila div {
+  flex: 1;
+}
+
+.encabezado {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.acciones button {
+  margin-right: 5px;
+}
+
+.formulario,
+.detalle {
+  width: 50%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+textarea {
+  padding: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}

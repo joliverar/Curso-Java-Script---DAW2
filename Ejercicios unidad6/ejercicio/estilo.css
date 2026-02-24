@@ -1,0 +1,27 @@
+/* Ocultar controles del slider */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  display: none !important;
+}
+
+/* Smart Waste hover color -> BN */
+.waste-img {
+  position: relative;
+}
+
+.waste-img img {
+  width: 100%;
+}
+
+.waste-bn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.waste-img:hover .waste-bn {
+  opacity: 1;
+}

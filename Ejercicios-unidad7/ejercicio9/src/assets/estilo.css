@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+nav a {
+  color: white;
+}
+
+.principal {
+  margin: 1rem;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+}
+
+.pruebaApi {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+.footer {
+  padding: 2rem;
+  background-color: #e5e5e5;
+}
+.tabla {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.cabecera {
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+  background: #e5e5e5;
+  justify-content: space-between;
+}
+.fila {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.celda {
+  flex: 1;
+}
+.form {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+input,
+textarea {
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}

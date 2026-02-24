@@ -1,0 +1,29 @@
+CONTACTA, CONECTA
+Y COMENCEMOS ALGO GRANDE
+
+Combinamos diseño + fabricación + ingeniería
+Somos expertos en IoT
+
+Llevamos más de 10 años haciendo realidad el IoT, ofreciendo soluciones de
+gestión de residuos, gestión de recursos hídricos e Industria 4.0.
+
+
+DISEÑO ELECTRÓNICO CON RADIOFRENCUENCIA
+
+Expertos en electrónica de RF
+
+En un diseño de producto IoT la electrónica con RF es un componente esencial que afecta a la compatibilidad electromagnética y seguridad eléctrica del dispositivo. En TST contamos con la instrumentación necesaria para realizar la adaptación de las antenas a las bandas de frecuencia requeridas, garantizando así una conectividad fiable y eficiente. Somos expertos en programación embebida para múltiples plataformas HW y diferentes protocolos de comunicación.
+
+TECNOLOGÍAS DE COMUNICACIONES IoT
+
+Expertos en redes IoT
+
+Las redes de comunicación han ido evolucionando para adaptarse a las particularidades de las aplicaciones IoT, como son baja velocidad, largo alcance, localización, seguridad y bajo consumo. En TST diseñamos productos con sensórica integrada y con la conectividad que mejor se adapta a cada aplicación, destacando las redes IoT Sigfox, LoRa y NB-IoT, las tecnologías tradicionales como son WiFi o Bluetooth y las tecnologías celulares (2G, 4G, y ya preparándonos para el 5G).
+
+SMART WATER
+
+TST ha desarrollado varios productos para la monitorización de parámetros de calidad de agua, monitorización de calidad de agua en ríos, piscinas o red de saneamiento, control de variaciones de presión en tuberías o control de nivel de agua en ríos.
+
+SMART WASTE
+
+TST ha desarrollado para MOBA una gama de sensores para el control de nivel llenado de contenedores. El producto MOBA FLS2 permite monitorizar, a través de tecnología ultrasónica, el nivel y estado de cualquier contenedor. Soporta varios modos de conectividad, entre ellos GPRS y NB-IoT. La información está disponible en tiempo real posibilitando una optimización en la planificación de rutas y un ahorro importante de costes y emisiones de CO2 a la atmósfera.

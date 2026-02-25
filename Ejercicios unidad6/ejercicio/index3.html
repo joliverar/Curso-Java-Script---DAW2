@@ -1,220 +1,196 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="estilo.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header class="bg-secondary">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="#">Navbar</a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <div class="text-center text-white py-5">
-        <p class="text-uppercase small">CONTACTA, CONECTA</p>
-        <h1 class="fw-light">Y COMENCEMOS ALGO GRANDE</h1>
-        <img src="img/Boton.png" alt="Botón" class="tst-hero-btn" />
-      </div>
-    </header>
-    <section class="container my-4">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="text-center bg-light py-4">
-      <div class="container">
-        <h2>Somos expertos en IoT</h2>
-        <p class="text-muted">
-          Soluciones para gestión de residuos, recursos hídricos e Industria
-          4.0.
-        </p>
-      </div>
-    </section>
-    <section class="container py-4">
-      <div class="row g-4">
-        <div class="col-12 col-md-6">
-          <div class="border p-3 h-100">
-            <h5>Electrónica RF</h5>
-            <p class="text-muted">
-              Diseño y adaptación de antenas para productos IoT.
-            </p>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TST - IoT Solutions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --accent-color: #00f2ff;
+      --dark-blue: #0a192f;
+    }
+    /* Mejora del Hero */
+    .hero-gradient {
+      background: linear-gradient(135deg, var(--dark-blue) 0%, #172a45 100%);
+      border-bottom: 4px solid var(--accent-color);
+    }
+    /* Tarjetas uniformes */
+    .feature-card {
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,86,179,0.15);
+    }
+    /* Estilo del botón Hero */
+    .btn-tst {
+      transition: scale 0.2s;
+      cursor: pointer;
+    }
+    .btn-tst:hover { scale: 1.05; }
+    /* Ajuste de imágenes */
+    .img-rounded { border-radius: 20px; object-fit: cover; }
+  </style>
+</head>
+<body>
 
-        <div class="col-12 col-md-6">
-          <div class="border p-3 h-100">
-            <h5>Redes IoT</h5>
-            <p class="text-muted">Tecnologías como LoRa, NB-IoT, WiFi y 4G.</p>
-          </div>
+  <!-- NAVBAR MEJORADA -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <span style="color: var(--accent-color)">TST</span> IoT
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+        <form class="d-flex ms-lg-3" role="search">
+          <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar tecnología...">
+          <button class="btn btn-sm btn-outline-info" type="submit">Ir</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header class="hero-gradient text-center text-white py-5">
+    <div class="container py-4">
+      <p class="text-uppercase ls-2 small mb-2" style="letter-spacing: 3px; color: var(--accent-color)">Contacta, Conecta</p>
+      <h1 class="display-4 fw-bold mb-4">COMENCEMOS ALGO GRANDE</h1>
+      <img src="img/Boton.png" alt="Empezar" class="btn-tst img-fluid" style="max-width: 200px;" />
+    </div>
+  </header>
+
+  <!-- CARRUSEL (Optimizado) -->
+  <section class="container my-5">
+    <div id="sliderIoT" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com" class="d-block w-100" alt="Tecnología 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com" class="d-block w-100" alt="Tecnología 2">
         </div>
       </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-md-6">
-            <div class="card h-100">
-              <img src="img/1.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Servicio 1</h5>
-                <p class="card-text">Descripción.</p>
-              </div>
-            </div>
-          </div>
+    </div>
+  </section>
 
-          <div class="col-12 col-md-6">
-            <div class="card text-bg-primary mb-3">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card’s content.
-                </p>
-              </div>
-            </div>
-          </div>
+  <!-- INTRO -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold">Somos expertos en <span class="text-primary">IoT</span></h2>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Soluciones integrales para la gestión inteligente de residuos, recursos hídricos e Industria 4.0.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS (GRID SOLICITADO: 12, 6, 6) -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-xl-6">
+        <div class="feature-card p-5 h-100 border-start border-primary border-5">
+          <h4 class="fw-bold text-primary">Electrónica RF</h4>
+          <p class="text-muted mb-0">Diseño y adaptación de antenas personalizadas para productos IoT de alta precisión.</p>
         </div>
       </div>
-    </section>
-    <section class="bg-light py-5">
-      <div class="container">
-        <!-- SMART WATER -->
-        <div class="row align-items-center mb-5">
-          <div class="col-12 col-xl-6">
-            <img
-              src="img/Smart_Water_1.png"
-              class="img-fluid"
-              alt="Smart Water"
-            />
-          </div>
-          <div class="col-12 col-xl-6 text-center">
-            <h4>SMART WATER</h4>
-            <p class="text-muted">
-              Monitorización de calidad y nivel del agua.
-            </p>
-          </div>
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-xl-6">
+        <div class="feature-card p-5 h-100 border-start border-info border-5">
+          <h4 class="fw-bold text-info">Redes IoT</h4>
+          <p class="text-muted mb-0">Conectividad robusta mediante tecnologías LoRa, NB-IoT, WiFi y redes 4G/5G.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- SMART WASTE -->
-        <div class="row align-items-center">
-          <div class="col-12 col-xl-6 order-2 order-xl-1 text-center">
-            <h4>SMART WASTE</h4>
-            <p class="text-muted">
-              Control del nivel de contenedores en tiempo real.
-            </p>
-          </div>
-
-          <div class="col-12 col-xl-6 order-1 order-xl-2">
-            <div class="waste-img">
-              <img
-                src="img/Smart_Waster.png"
-                class="img-fluid waste-color"
-                alt="Smart Waste color"
-              />
-              <img
-                src="img/Smart_Waster_BN.png"
-                class="img-fluid waste-bn"
-                alt="Smart Waste blanco y negro"
-              />
-            </div>
+  <!-- PRODUCTOS / DETALLE (GRID SOLICITADO: 12, 6, 6) -->
+  <section class="bg-white py-5">
+    <div class="container">
+      <!-- SMART WATER -->
+      <div class="row align-items-center mb-5 g-5">
+        <div class="col-12 col-md-6 col-xl-6">
+          <img src="img/Smart_Water_1.png" class="img-fluid img-rounded shadow" alt="Smart Water">
+        </div>
+        <div class="col-12 col-md-6 col-xl-6">
+          <div class="ps-md-4">
+            <span class="badge bg-primary mb-2">Recursos Hídricos</span>
+            <h3 class="fw-bold">SMART WATER</h3>
+            <p class="text-muted lead">Monitorización avanzada de calidad, flujo y niveles de agua en tiempo real.</p>
+            <button class="btn btn-outline-primary">Saber más</button>
           </div>
         </div>
       </div>
-    </section>
-    <section class="container py-5">
-      <h4>Contacto</h4>
 
-      <img src="img/mapa.png" class="img-fluid mb-4" alt="Mapa ubicación" />
-
-      <form>
-        <div class="mb-3">
-          <label class="form-label" for="nombre">Nombre *</label>
-          <input class="form-control" type="text" id="nombre" />
+      <!-- SMART WASTE (Invertido en escritorio) -->
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-md-6 col-xl-6 order-2 order-md-1">
+          <div class="pe-md-4">
+            <span class="badge bg-success mb-2">Gestión Urbana</span>
+            <h3 class="fw-bold">SMART WASTE</h3>
+            <p class="text-muted lead">Optimización de rutas y control del nivel de llenado de contenedores mediante sensores ultrasónicos.</p>
+            <button class="btn btn-outline-success">Saber más</button>
+          </div>
         </div>
-
-        <div class="mb-3">
-          <label class="form-label" for="email">Correo electrónico *</label>
-          <input class="form-control" type="email" id="email" />
+        <div class="col-12 col-md-6 col-xl-6 order-1 order-md-2">
+          <img src="img/Smart_Waster.png" class="img-fluid img-rounded shadow" alt="Smart Waste">
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="mb-3">
-          <label class="form-label" for="mensaje">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="4"></textarea>
+  <!-- CONTACTO Y MAPA -->
+  <section class="container py-5">
+    <div class="row g-5">
+      <div class="col-12 col-md-6 col-xl-6">
+        <h4 class="fw-bold mb-4">Ubicación</h4>
+        <div class="rounded-4 overflow-hidden shadow-sm">
+           <img src="img/mapa.png" class="img-fluid w-100" alt="Mapa" style="min-height: 300px; object-fit: cover;">
         </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-6">
+        <h4 class="fw-bold mb-4">Escríbenos</h4>
+        <form class="bg-light p-4 rounded-4 shadow-sm">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Nombre *</label>
+            <input class="form-control border-0" type="text" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Email *</label>
+            <input class="form-control border-0" type="email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Mensaje</label>
+            <textarea class="form-control border-0" rows="3"></textarea>
+          </div>
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="privacy" required>
+            <label class="form-check-label small" for="privacy">Acepto la política de privacidad</label>
+          </div>
+          <button class="btn btn-primary px-5 py-2 w-100 shadow-sm" type="submit">Enviar Solicitud</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="check" />
-          <label class="form-check-label" for="check">
-            Acepto la política de privacidad
-          </label>
-        </div>
+  <footer class="bg-dark text-secondary text-center py-4">
+    <div class="container">
+      <p class="mb-0 small">© 2026 TST - Tecnología al servicio de la eficiencia.</p>
+    </div>
+  </footer>
 
-        <button class="btn btn-primary" type="submit">Enviar</button>
-        <button class="btn btn-outline-secondary" type="reset">Limpiar</button>
-      </form>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
-      <small>© 2026 TST</small>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

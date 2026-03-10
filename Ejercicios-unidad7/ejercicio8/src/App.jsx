@@ -10,6 +10,8 @@ import PacientesPage from "./pages/pacientes/PacientesPage";
 import PacienteForm from "./pages/pacientes/PacienteForm";
 import ExpedientesPage from "./pages/expedientes/ExpedientesPage";
 import ExpedienteForm from "./pages/expedientes/ExpedienteForm";
+import UsuarioForm from "./pages/usuarios/UsuarioForm";
+import UsuariosPage from "./pages/usuarios/UsuariosPage";
 
 export default function App() {
   return (
@@ -18,6 +20,23 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/usuarios"
+            element={
+              <RutaProtegida roles={["gestion", "admin"]}>
+                <UsuariosPage />
+              </RutaProtegida>
+            }
+          />
+
+          <Route
+            path="/usuarios/nuevo"
+            element={
+              <RutaProtegida roles={["gestion", "admin"]}>
+                <UsuarioForm />
+              </RutaProtegida>
+            }
+          />
 
           <Route
             path="/pacientes"
@@ -44,10 +63,8 @@ export default function App() {
               </RutaProtegida>
             }
           />
-          <Route path="/error" element={<ErrorPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-        <Route
+          
+          <Route
           path="/expedientes"
           element={
             <RutaProtegida roles={["medico", "admin"]}>
@@ -55,6 +72,10 @@ export default function App() {
             </RutaProtegida>
           }
         />
+        <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
+        
       </Routes>
     </BrowserRouter>
   );

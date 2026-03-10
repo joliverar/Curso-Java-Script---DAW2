@@ -7,7 +7,7 @@ export default function ExpedientesPage() {
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    setPacientes(negocio.obtenerPacientes("", 0, 10));
+     negocio.obtenerPacientes("", 0, 6).then(setPacientes);
   }, []);
 
   return (

@@ -7,10 +7,13 @@ export function AppProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
   const [mensaje, setMensaje] = useState(null);
 
-  const login = (username, password) => {
-    const u = negocio.validarUsuario(username, password);
+const login = async (username, password) => {
+  const u = await negocio.validarUsuario(username, password);
+    console.log("LOGIN:", username, password, "=>", u);
+
     if (!u) {
       setMensaje("Credenciales incorrectas");
+      console.log('ingreso');
       return false;
     }
     setUsuario(u);

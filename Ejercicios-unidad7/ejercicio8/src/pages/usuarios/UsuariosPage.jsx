@@ -7,7 +7,9 @@ export default function UsuariosPage() {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    setUsuarios(negocio.obtenerUsuarios());
+    //setUsuarios(negocio.obtenerUsuarios());
+    negocio.obtenerUsuarios("", 0, 6).then(setUsuarios);
+    
   }, []);
 
   const borrar = (id) => {

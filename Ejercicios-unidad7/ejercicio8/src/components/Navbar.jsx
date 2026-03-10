@@ -3,6 +3,7 @@ import { useApp } from "../context/AppContext";
 
 export default function Navbar() {
   const { usuario, logout } = useApp();
+ console.log("USUARIO:", usuario);
 
   return (
     <nav style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
@@ -30,6 +31,7 @@ export default function Navbar() {
           {" | "}
           <button onClick={logout}>Logout</button>
         </>
+        
       )}
     </nav>
   );

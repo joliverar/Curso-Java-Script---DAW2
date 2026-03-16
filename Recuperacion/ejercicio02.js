@@ -6,28 +6,24 @@ muestre los valores: máximo, mínimo, suma, media y total de números introduci
 function solicitarVariables(){
     let suma = 0;
     let total = 0;
-    let max = -Infinity;
-    let min = +Infinity;
+    let max = null;
+    let min = null;
 
-    while(true){
-        const entrada = prompt("Ingrese un numero, con cero termina");
+    while (true) {
+      const entrada = prompt("Ingrese un numero, con cero termina");
 
-        if(entrada === null ) break;
+      if (entrada === null) break;
 
-        const n = parseInt(entrada);
+      const n = parseInt(entrada);
 
-        if(n === 0 ) break;
+      if (n === 0) break;
 
-        suma += n;
-        total++;
+      suma += n;
+      total++;
 
-        if(n > max) max = n;
+      if (max === null || n > max) max = n;
 
-        if(n < min) min = n;
-
-       
-
-       
+      if (min === null || n < min) min = n;
     }
  let media = suma/total;
      alert(`Suma: '${suma}'\nTotal: '${total}'\nMaximo: '${max}'\nMinimo: '${min}'\nMedia: '${media}`);

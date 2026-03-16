@@ -2,33 +2,36 @@
 
 
 function dibujarTrianguloCompleto(n) {
-  let triangulo = new Array(n); // Creamos el array con tamaño fijo
-  let linea, espacios, estrellas;
+  let res = [];
 
-  for (let i = 1; i <= n; i++) {
-    linea = "";
-    espacios = "";
-    estrellas = "";
+  for (let i = 1; i <= n; i++){
+    let linea = "";
 
-    // Espacios a la izquierda
-    for (let e = 0; e < n - i; e++) {
-      espacios += " ";
+    for (let j = 0; j < n-i; j++){
+      linea += " ";
     }
 
-    // Estrellas centradas
-    for (let s = 0; s < (2 * i - 1); s++) {
-      estrellas += "*";
+    for (let k = 0; k < 2 * i - 1; k++){
+      linea += "*";
     }
 
-    linea = espacios + estrellas;
-    triangulo[i - 1] = linea; // Guardar sin push
+    res[i - 1] = linea;
+
+
   }
-
-  return triangulo;
+  return res;
 }
-let tamaño = 5;
-let resultado = dibujarTrianguloCompleto(tamaño);
 
-for (let i = 0; i < resultado.length; i++) {
-  console.log(resultado[i]);
+function probarTriangulo() {
+  let r = dibujarTrianguloCompleto(6);
+  let texto = "";
+
+  for (let i = 0; i < r.length; i++) {
+    texto += r[i] + "\n";
+    
+  }
+  alert(texto);
+  console.log(texto);
 }
+
+probarTriangulo();

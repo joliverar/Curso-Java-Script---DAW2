@@ -2,60 +2,50 @@
 
 
 function rombo(n) {
+  let res = [];
+  
+  for (let i = 1; i <= n; i++){
+    let linea = "";
 
-  // Validación: el número debe ser impar
-  if (n % 2 === 0) {
-    console.log("El número debe ser impar.");
-    return [];
+    for (let j = 0; j < n-i; j++) {
+      linea += " ";
+      
+    }
+
+    for (let k = 0; k < 2*i-1; k++) {
+     linea += "*"
+      
+    }
+
+    res[res.length] = linea;
+  
   }
+   for (let i = n-1; i >= 1; i--) {
+     let linea = "";
 
-  let resultado = new Array(n);
+     for (let j = 0; j < n - i; j++) {
+       linea += " ";
+     }
 
-  // Calcular la mitad 
-  let mitad = 0;
-  for (let i = 0; i < n; i++) {
-    if (i * 2 + 1 >= n) {
-      mitad = i;
-      break;
-    }
-  }
+     for (let k = 0; k < 2 * i - 1; k++) {
+       linea += "*";
+     }
 
-  for (let i = 0; i < n; i++) {
-    let espacios = "";
-    let estrellas = "";
+     res[res.length] = linea;
+   }
+  return res;
+}
 
-    // Calcular distancia al centro 
-    let distancia = i - mitad;
-    if (distancia < 0) {
-      distancia = -distancia;
-    }
-
-
-    let numEstrellas = n - 2 * distancia;
-
-
-    let numEspacios = (n - numEstrellas) / 2;
-
-
-    for (let e = 0; e < numEspacios; e++) {
-      espacios += " ";
-    }
-
+function probarRonbo() {
+  let r = rombo(7);
+  let texto = "";
+  for (let i = 0; i < r.length; i++) {
+    texto += r[i] + "\n";
     
-    for (let s = 0; s < numEstrellas; s++) {
-      estrellas += "*";
-    }
-
-    resultado[i] = espacios + estrellas;
   }
-
-  return resultado;
+  alert(texto);
+  console.log(texto);
 }
 
-let tamaño = 7;
-let resultado = rombo(tamaño);
-
-for (let i = 0; i < resultado.length; i++) {
-  console.log(resultado[i]);
-}
+probarRonbo();
 

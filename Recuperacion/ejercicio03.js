@@ -7,60 +7,36 @@ Añade el código auxiliar necesario para probar la aplicación.*/
 
 'use strict';
 
-function rombo(n) {
-
-  // Validación: el número debe ser impar
-  if (n % 2 === 0) {
-    console.log("El número debe ser impar.");
-    return [];
-  }
-
-  let resultado = new Array(n);
-
-  // Calcular la mitad sin Math.floor
-  let mitad = 0;
+function rectanguloHueco(n) {
+  let res = [];
   for (let i = 0; i < n; i++) {
-    if (i * 2 + 1 >= n) {
-      mitad = i;
-      break;
+    let linea = "";
+
+    for (let j = 0; j < n; j++) {
+      if (i === 0 || i === n - 1 || j === 0 || j === n - 1) {
+        linea += "*";
+      } else {
+        linea += " ";
+      }
+      
     }
+    res[i] = linea;
+    
   }
-
-  for (let i = 0; i < n; i++) {
-    let espacios = "";
-    let estrellas = "";
-
-    // Calcular distancia al centro sin Math.abs
-    let distancia = i - mitad;
-    if (distancia < 0) {
-      distancia = -distancia;
-    }
-
-    // Número de estrellas
-    let numEstrellas = n - 2 * distancia;
-
-    // Número de espacios
-    let numEspacios = (n - numEstrellas) / 2;
-
-    // Construir espacios
-    for (let e = 0; e < numEspacios; e++) {
-      espacios += " ";
-    }
-
-    // Construir estrellas
-    for (let s = 0; s < numEstrellas; s++) {
-      estrellas += "*";
-    }
-
-    resultado[i] = espacios + estrellas;
-  }
-
-  return resultado;
+  return res;
 }
 
-let tamaño = 4;
-let resultado = rombo(tamaño);
+function probarRectangulo() {
+  let r = rectanguloHueco(5);
+  
+  let texto = "";
 
-for (let i = 0; i < resultado.length; i++) {
-  console.log(resultado[i]);
+  for (let i = 0; i < r.length; i++) {
+    texto = texto + r[i] + "\n";
+    
+    
+  }
+  alert(texto);
 }
+
+probarRectangulo();

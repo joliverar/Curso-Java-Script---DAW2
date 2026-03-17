@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Yedra</title>
+</head>
+<body>
+
+<h2>Gestión de alumnos</h2>
+
+<button id="btnSuspensos">Suspensos</button>
+<button id="btnEstadisticas">Estadísticas</button>
+<button id="btnExportar">Exportar JSON</button>
+
+<br><br>
+
+<textarea id="entradaJSON" rows="6" cols="50"></textarea>
+<br>
+<button id="btnCargar">Cargar JSON</button>
+
+<h3>Resultado</h3>
+<pre id="resultado"></pre>
+
+<script src="yedra.js"></script>
+<script>
+window.addEventListener("load", () => {
+
+    const res = document.getElementById("resultado");
+
+    document.getElementById("btnSuspensos").addEventListener("click", () => {
+        res.textContent = JSON.stringify($yedra.suspensos(), null, 2);
+    });
+
+    document.getElementById("btnEstadisticas").addEventListener("click", () => {
+        res.textContent = JSON.stringify($yedra.estadisticas(), null, 2);
+    });
+
+    document.getElementById("btnExportar").addEventListener("click", () => {
+        res.textContent = $yedra.exportarJSON();
+    });
+
+    document.getElementById("btnCargar").addEventListener("click", () => {
+        $yedra.cargarJSON(document.getElementById("entradaJSON").value);
+    });
+
+});
+</script>
+
+</body>
+</html>

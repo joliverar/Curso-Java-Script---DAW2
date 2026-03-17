@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="contenedor">
+    <!-- Columna izquierda: juego -->
+    <div id="col-juego">
+        <table id="tablero">
+            <tr>
+                <td><button class="btn-color verde" data-color="verde"></button></td>
+                <td><button class="btn-color rojo" data-color="rojo"></button></td>
+            </tr>
+            <tr>
+                <td><button class="btn-color azul" data-color="azul"></button></td>
+                <td><button class="btn-color amarillo" data-color="amarillo"></button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Columna derecha: control e info -->
+    <div id="col-control">
+        <h2>Juego de memoria Simon</h2>
+
+        <label>
+            ms iluminación:
+            <input type="number" id="msIluminacion" value="600">
+        </label>
+        <br>
+        <label>
+            ms entre luces:
+            <input type="number" id="msEspera" value="300">
+        </label>
+        <br><br>
+        <button id="btnComenzar">Comenzar</button>
+
+        <h3>Información</h3>
+        <p>Mejor racha: <span id="mejorRacha">0</span></p>
+        <p>Aciertos actuales: <span id="aciertosActuales">0 de 0</span></p>
+    </div>
+</div>
+
+<script src="simon.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

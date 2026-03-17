@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#contenedor {
+    display: flex;
+    gap: 30px;
+}
+
+#col-juego, #col-control {
+    flex: 1;
+}
+
+#tablero {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#tablero td {
+    padding: 10px;
+}
+
+.btn-color {
+    width: 120px;
+    height: 120px;
+    border: none;
+    border-radius: 15px;
+    background-color: #777; /* color genérico cuando está apagado */
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+/* Colores cuando están encendidos */
+.btn-color.on.verde {
+    background-color: #00c853;
+}
+.btn-color.on.rojo {
+    background-color: #d50000;
+}
+.btn-color.on.azul {
+    background-color: #2962ff;
+}
+.btn-color.on.amarillo {
+    background-color: #ffd600;
+}
+
+#col-control input {
+    width: 100px;
+}

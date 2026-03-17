@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mercadillo</title>
+</head>
+<body>
+
+<h2>Gestión de Inventario</h2>
+
+<!-- Agregar producto -->
+<h3>Agregar producto</h3>
+<input id="nombreAdd" placeholder="Nombre">
+<input id="cantidadAdd" type="number" placeholder="Cantidad">
+<input id="precioAdd" type="number" placeholder="Precio">
+<input id="categoriaAdd" placeholder="Categoría">
+<button id="btnAgregar">Agregar</button>
+
+<!-- Eliminar producto -->
+<h3>Eliminar producto</h3>
+<input id="nombreDel" placeholder="Nombre">
+<button id="btnEliminar">Eliminar</button>
+
+<!-- Buscar producto -->
+<h3>Buscar producto</h3>
+<input id="nombreBuscar" placeholder="Nombre">
+<button id="btnBuscar">Buscar</button>
+
+<!-- Actualizar inventario -->
+<h3>Actualizar inventario</h3>
+<input id="nombreAct" placeholder="Nombre">
+<input id="cantidadAct" type="number" placeholder="Cantidad (+/-)">
+<button id="btnActualizar">Actualizar</button>
+
+<!-- Filtrar por categoría -->
+<h3>Filtrar por categoría</h3>
+<input id="categoriaFiltrar" placeholder="Categoría">
+<button id="btnFiltrar">Filtrar</button>
+
+<!-- Ordenar por precio -->
+<h3>Ordenar por precio</h3>
+<button id="btnOrdenar">Ordenar</button>
+
+<!-- Mostrar inventario -->
+<h3>Inventario completo</h3>
+<button id="btnMostrar">Mostrar inventario</button>
+
+<hr>
+
+<div id="resultado"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

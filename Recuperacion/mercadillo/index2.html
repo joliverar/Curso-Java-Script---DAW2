@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario PRO</title>
+</head>
+<body>
+
+<h2>Inventario</h2>
+
+<input id="nombre" placeholder="Nombre">
+<input id="cantidad" type="number" placeholder="Cantidad">
+<input id="precio" type="number" placeholder="Precio">
+<input id="categoria" placeholder="Categoría">
+
+<br><br>
+
+<button id="btnAgregar">Agregar</button>
+<button id="btnMostrar">Mostrar</button>
+<button id="btnOrdenar">Ordenar Precio</button>
+<button id="btnFiltrar">Filtrar</button>
+
+<br><br>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+</table>
+
+<script src="app.js"></script>
+
+</body>
+</html>

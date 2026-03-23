@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Juego de Memoria - Simón</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="simon_negocio.js"></script>
-  <script defer src="simon_ui.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD2E3 - Simon</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="contenedor">
-    <!-- Columna izquierda: tablero del juego -->
-    <section class="columna juego">
-      <table>
-        <tr>
-          <td><button id="verde" class="color base"></button></td>
-          <td><button id="rojo" class="color base"></button></td>
-        </tr>
-        <tr>
-          <td><button id="amarillo" class="color base"></button></td>
-          <td><button id="azul" class="color base"></button></td>
-        </tr>
-      </table>
-    </section>
+    <h1>Juego de memoria Simon</h1>
 
-    <!-- Columna derecha: configuración e información -->
-    <section class="columna control">
-      <h2>Configuración</h2>
-      <label>Tiempo de iluminación (ms):</label>
-      <input type="number" id="tiempoIluminacion" value="600" min="100"><br>
-      <label>Tiempo entre luces (ms):</label>
-      <input type="number" id="tiempoEspera" value="300" min="100"><br>
-      <button id="btnIniciar">Comenzar Juego</button>
+    <div class="contenedor">
+        <!-- Columna izquierda: juego -->
+        <div class="zona-juego">
+            <table class="tabla-simon">
+                <tr>
+                    <td>
+                        <button id="verde" class="boton-color apagado" data-color="verde"></button>
+                    </td>
+                    <td>
+                        <button id="rojo" class="boton-color apagado" data-color="rojo"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="azul" class="boton-color apagado" data-color="azul"></button>
+                    </td>
+                    <td>
+                        <button id="amarillo" class="boton-color apagado" data-color="amarillo"></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-      <h2>Información</h2>
-      <p>Mejor racha: <span id="mejorRacha">0</span></p>
-      <p>Progreso actual: <span id="rachaActual">0 de 0</span></p>
-      <p id="mensaje"></p>
-    </section>
-  </main>
+        <!-- Columna derecha: control e información -->
+        <div class="zona-control">
+            <div class="bloque">
+                <label for="tiempoLuz">Milisegundos encendida:</label>
+                <input type="number" id="tiempoLuz" value="700" min="100" step="100">
+            </div>
+
+            <div class="bloque">
+                <label for="tiempoEspera">Milisegundos entre encendidos:</label>
+                <input type="number" id="tiempoEspera" value="300" min="0" step="100">
+            </div>
+
+            <div class="bloque">
+                <button id="btnComenzar">Comenzar juego</button>
+            </div>
+
+            <div class="bloque info">
+                <p><strong>Mejor racha:</strong> <span id="mejorRacha">0</span></p>
+                <p><strong>Partida actual:</strong> <span id="infoPartida">0 de 0</span></p>
+                <p><strong>Estado:</strong> <span id="estadoJuego">parado</span></p>
+                <p id="mensaje"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
-
-

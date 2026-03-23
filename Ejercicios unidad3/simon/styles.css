@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.zona-juego {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-simon {
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+
+.tabla-simon td {
+    padding: 0;
+}
+
+.boton-color {
+    width: 180px;
+    height: 180px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    background-color: #777;
+}
+
+.boton-color:active {
+    transform: scale(0.98);
+}
+
+.apagado {
+    background-color: #777 !important;
+    box-shadow: none;
+}
+
+.encendido-verde {
+    background-color: limegreen !important;
+    box-shadow: 0 0 20px limegreen;
+}
+
+.encendido-rojo {
+    background-color: red !important;
+    box-shadow: 0 0 20px red;
+}
+
+.encendido-azul {
+    background-color: dodgerblue !important;
+    box-shadow: 0 0 20px dodgerblue;
+}
+
+.encendido-amarillo {
+    background-color: gold !important;
+    box-shadow: 0 0 20px gold;
+}
+
+.zona-control {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.bloque {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#btnComenzar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+#mensaje {
+    min-height: 24px;
+    font-weight: bold;
+    color: #b00020;
+}

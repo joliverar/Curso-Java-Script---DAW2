@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión Red de Bibliotecas</title>
+  <link rel="stylesheet" href="./css/estilos.css" />
+</head>
+<body>
+  <header class="contenedor">
+    <h1>Gestión Red de Bibliotecas</h1>
+
+    <nav class="menu">
+      <button id="btnAutores">Autores</button>
+      <button id="btnLibros">Libros</button>
+      <button id="btnBibliotecas">Bibliotecas</button>
+    </nav>
+
+    <section class="buscador">
+      <select id="tipoBusqueda">
+        <option value="libro">Libros por título</option>
+        <option value="autor">Autores por nombre</option>
+      </select>
+      <input type="text" id="textoBusqueda" placeholder="Introduce texto..." />
+      <button id="btnBuscar">Buscar</button>
+    </section>
+  </header>
+
+  <main class="contenedor">
+    <div id="app"></div>
+  </main>
+
+  <script type="module" src="./js/gestorBiblioteca.js"></script>
+</body>
+</html>
